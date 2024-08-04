@@ -8,5 +8,7 @@
     <x-home.services/>
 
     <x-home.projects/>
+
+    <x-home.counter/>
 </div>
 

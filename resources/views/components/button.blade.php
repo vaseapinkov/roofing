@@ -5,7 +5,7 @@
 ])
 @php
     $classes = match ($type) {
-            'primary' => 'bg-primary hover:bg-secondary text-white text-lg font-bold px-[31px] py-5 rounded',
+            'primary' => 'bg-primary-500 hover:bg-secondary text-white text-lg font-bold px-[31px] py-5 rounded',
             'secondary' => 'bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded',
             default => 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded',
         };

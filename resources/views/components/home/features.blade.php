@@ -4,11 +4,11 @@ $services = \App\Models\Service::where('show_on_home_page', true)->get();
 ?>
 <section id="features" class="container mx-auto pt-[120px] pb-[90px]">
 
-    <div class="flex place-content-center flex-wrap gap-x-6 gap-y-10">
+    <div class="flex place-content-center flex-wrap gap-x-4 gap-y-10">
         @foreach($services as $service)
-            <div class="w-[30%] group relative z-1 px-[50px] before:w-full before:bg-primary-100 before:h-[150px] before:absolute before:top-1/2 before:transform before:-translate-y-1/2 before:left-0 before:-z-10 before:rounded-lg">
+            <div class="w-[32.5%] group relative z-1 px-[50px] before:w-full before:bg-primary-100 before:h-[150px] before:absolute before:top-1/2 before:transform before:-translate-y-1/2 before:left-0 before:-z-10 before:rounded-lg">
                 <div class="relative flex flex-col h-full bg-white shadow-card px-[48px] pt-[45px] py-[50px] rounded-10 overflow-hidden">
-                    <h4 class="text-xl text-gray-title font-bold mb-2">
+                    <h4 class="text-xl text-gray-title font-heading font-bold mb-2">
                         {{$service->name}}
                     </h4>
                     <p class="text-gray-body mb-4">

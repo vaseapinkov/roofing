@@ -7,6 +7,17 @@ export default {
     ],
     theme: {
         extend: {
+            container: {
+                center: true, // Center the container horizontally
+                padding: '1rem', // Add custom padding
+                screens: {
+                    sm: '640px',  // Small screens
+                    md: '768px',  // Medium screens
+                    lg: '1024px', // Large screens
+                    xl: '1280px', // Extra-large screens
+                    '2xl': '1470px', // 2x Extra-large screens
+                },
+            },
             colors: {
                 "primary": {
                     100: "#FFF3ED",
@@ -17,15 +28,22 @@ export default {
                 },
                 "secondary": "#0E1436",
                 "gray": "#EDF0FF",
+                "gray-light": "#F4F6FF",
                 "gray-body": "#61657E",
                 "gray-title": "#1C1C1C",
             },
             boxShadow: {
                 "3xl": "4px 4px 20px rgba(0, 0, 0, 0.1)",
                 "card": "0px 0px 36px rgba(0, 0, 0, 0.08)",
+                "glow": "4px 4px 15px rgba(254, 93, 20, 0.4)",
             },
-            "borderRadius": {
+            borderRadius: {
                 "10": "10px",
+                "5": "5px",
+            },
+            fontFamily: {
+                "heading": ["Poppins", "sans-serif"],
+                "body": ["DM Sans", "sans-serif"],
             },
         },
     },

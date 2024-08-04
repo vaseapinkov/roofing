@@ -6,5 +6,7 @@
     <x-home.about-us/>
 
     <x-home.services/>
+
+    <x-home.projects/>
 </div>
 

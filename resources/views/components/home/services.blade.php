@@ -30,9 +30,7 @@ $services = \App\Models\Service::where('show_on_home_page', true)->get();
                                 <div class="bg-black absolute top-0 left-0 h-9 w-9 group-hover/link:w-full transition-all duration-500 ease-out z-0 rounded-full"></div>
 
                                 <p class="z-10">Read More</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor" class="size-4 z-10">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
-                                </svg>
+                                <x-arrow-right stroke-width="4" class="size-4 z-10"/>
                             </a>
                         </div>
                     </div>

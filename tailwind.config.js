@@ -26,7 +26,10 @@ export default {
                     400: "#FFDAC9",
                     500: "#FE5D14",
                 },
-                "secondary": "#0E1436",
+                "secondary": {
+                    '400': "#161C49",
+                    DEFAULT: "#0E1436"
+                },
                 "gray": "#EDF0FF",
                 "gray-light": "#F4F6FF",
                 "gray-body": "#61657E",
@@ -38,6 +41,7 @@ export default {
                 "glow": "4px 4px 15px rgba(254, 93, 20, 0.4)",
             },
             borderRadius: {
+                "20": "20px",
                 "10": "10px",
                 "5": "5px",
             },

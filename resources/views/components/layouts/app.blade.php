@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
 
     {{--  Poppins & DM Sans  --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,5 +41,6 @@
 {{ $slot }}
 </main>
 
+@vite('resources/js/app.js')
 </body>
 </html>

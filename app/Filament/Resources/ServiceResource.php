@@ -52,6 +52,7 @@ class ServiceResource extends Resource
                     ->required(),
 
                 FileUpload::make('home_page_icon')
+                    ->imagePreviewHeight(100)
                     ->required(),
 
                 Checkbox::make('show_on_home_page'),

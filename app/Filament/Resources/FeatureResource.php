@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProjectResource\Pages;
-use App\Models\Project;
+use App\Filament\Resources\FeatureResource\Pages;
+use App\Models\Feature;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Placeholder;
@@ -20,11 +20,11 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class ProjectResource extends Resource
+class FeatureResource extends Resource
 {
-    protected static ?string $model = Project::class;
+    protected static ?string $model = Feature::class;
 
-    protected static ?string $slug = 'projects';
+    protected static ?string $slug = 'features';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -37,23 +37,21 @@ class ProjectResource extends Resource
                 Placeholder::make('created_at')
                     ->label('Created Date')
                     ->hiddenOn('create')
-                    ->content(fn(?Project $record): string => $record?->created_at?->diffForHumans() ?? '-'),
+                    ->content(fn(?Feature $record): string => $record?->created_at?->diffForHumans() ?? '-'),
 
                 Placeholder::make('updated_at')
                     ->label('Last Modified Date')
                     ->hiddenOn('create')
-                    ->content(fn(?Project $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
+                    ->content(fn(?Feature $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
 
                 TextInput::make('name')
-                    ->required(),
-
-                TextInput::make('sub_title')
                     ->required(),
 
                 Textarea::make('home_page_description')
                     ->required(),
 
-                FileUpload::make('home_page_image')
+                FileUpload::make('home_page_icon')
+                    ->imagePreviewHeight(100)
                     ->required(),
 
                 Checkbox::make('show_on_home_page'),
@@ -67,6 +65,10 @@ class ProjectResource extends Resource
                 TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
+
+                ImageColumn::make('home_page_icon')
+                    ->label('Icon')
+                    ->size(20),
 
                 TextColumn::make('home_page_description')->limit(50),
 
@@ -90,9 +92,9 @@ class ProjectResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListProjects::route('/'),
-            'create' => Pages\CreateProject::route('/create'),
-            'edit' => Pages\EditProject::route('/{record}/edit'),
+            'index' => Pages\ListFeatures::route('/'),
+            'create' => Pages\CreateFeature::route('/create'),
+            'edit' => Pages\EditFeature::route('/{record}/edit'),
         ];
     }
 

@@ -1,6 +1,6 @@
 <?php
 // TODO: Replace with features
-$services = \App\Models\Service::where('show_on_home_page', true)->get();
+$services = \App\Models\Feature::where('show_on_home_page', true)->get();
 ?>
 <section id="features" class="container mx-auto pt-[120px] pb-[90px]">
 

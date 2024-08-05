@@ -12,5 +12,7 @@
     <x-home.counter/>
 
     <x-home.testimonials/>
+
+    <x-home.contact-us/>
 </div>
 

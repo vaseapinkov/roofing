@@ -15,10 +15,21 @@ $classes = match ($type) {
     default => "bg-primary-500 hover:bg-secondary font-heading text-white text-lg rounded $paddings",
 };
 ?>
-<a {{$attributes->merge(['class' => "$classes flex items-center gap-4 leading-none"])}}>
-    {{ $slot }}
 
-    @if($icon === 'arrow-right')
-        <x-arrow-right :class="$iconSize" stroke-width="4"/>
-    @endif
-</a>
+@isset($attributes->href)
+    <a {{$attributes->merge(['class' => "$classes flex items-center gap-4 leading-none"])}}>
+        {{ $slot }}
+
+        @if($icon === 'arrow-right')
+            <x-arrow-right :class="$iconSize" stroke-width="4"/>
+        @endif
+    </a>
+@else
+    <button {{$attributes->merge(['class' => "$classes flex items-center gap-4 leading-none"])}}>
+        {{ $slot }}
+
+        @if($icon === 'arrow-right')
+            <x-arrow-right :class="$iconSize" stroke-width="4"/>
+        @endif
+    </button>
+@endisset

@@ -16,16 +16,24 @@
                 <h2 class="text-gray-title font-bold text-4xl font-heading mb-4">Contact Us</h2>
                 <p class="text-gray-body text-sm">Send us a message and we' ll respond as soon as possible</p>
 
-                <div class="mt-12 grid grid-cols-2 gap-x-6 gap-y-4">
-                    <input class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4" type="text" placeholder="First Name*">
-                    <input class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4" type="text" placeholder="Last Name*">
-                    <input class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4" type="text" placeholder="Email Address*">
-                    <input class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4" type="text" placeholder="Phone*">
-                    <input class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2" type="text" placeholder="Subject">
-                    <textarea class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2" rows="8" placeholder="Your message here"></textarea>
+                <form wire:submit.prevent="saveMessage">
+                    <div class="mt-12 grid grid-cols-2 gap-x-6 gap-y-4">
+                        <input wire:model="firs_name" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4" type="text" placeholder="First Name*">
+                        <input wire:model="last_name" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4" type="text" placeholder="Last Name*">
+                        <input wire:model="email" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4" type="text" placeholder="Email Address*">
+                        <input wire:model="phone" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4" type="text" placeholder="Phone*">
+                        <input wire:model="subject" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2" type="text" placeholder="Subject">
+                        <textarea wire:model="message" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2" rows="8" placeholder="Your message here"></textarea>
 
-                    <x-button class="col-span-2 justify-center" icon="arrow-right">Send Message</x-button>
-                </div>
+                        <x-button type="submit" class="col-span-2 justify-center" icon="arrow-right">Send Message</x-button>
+
+                        @if (session('status'))
+                            <div class="alert alert-success col-span-2 text-gray-title h-0">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                    </div>
+                </form>
             </div>
 
             <div class="grid grid-rows-2 gap-8">

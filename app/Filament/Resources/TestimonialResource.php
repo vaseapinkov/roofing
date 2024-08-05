@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProjectResource\Pages;
-use App\Models\Project;
+use App\Filament\Resources\TestimonialResource\Pages;
+use App\Models\Testimonial;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Placeholder;
@@ -15,17 +15,16 @@ use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
-class ProjectResource extends Resource
+class TestimonialResource extends Resource
 {
-    protected static ?string $model = Project::class;
+    protected static ?string $model = Testimonial::class;
 
-    protected static ?string $slug = 'projects';
+    protected static ?string $slug = 'testimonials';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -38,23 +37,22 @@ class ProjectResource extends Resource
                 Placeholder::make('created_at')
                     ->label('Created Date')
                     ->hiddenOn('create')
-                    ->content(fn(?Project $record): string => $record?->created_at?->diffForHumans() ?? '-'),
+                    ->content(fn(?Testimonial $record): string => $record?->created_at?->diffForHumans() ?? '-'),
 
                 Placeholder::make('updated_at')
                     ->label('Last Modified Date')
                     ->hiddenOn('create')
-                    ->content(fn(?Project $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
+                    ->content(fn(?Testimonial $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
 
-                TextInput::make('name')
+                Textarea::make('message')
                     ->required(),
 
-                TextInput::make('sub_title')
+                TextInput::make('client_name')
                     ->required(),
 
-                Textarea::make('home_page_description')
-                    ->required(),
+                TextInput::make('client_title'),
 
-                FileUpload::make('home_page_image')
+                FileUpload::make('client_avatar')
                     ->required(),
 
                 Checkbox::make('show_on_home_page'),
@@ -65,11 +63,21 @@ class ProjectResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')
-                    ->searchable()
-                    ->sortable(),
+                ImageColumn::make('client_avatar')
+                    ->label("Avatar")
+                    ->alignCenter()
+                    ->size(40),
 
-                TextColumn::make('home_page_description')->limit(50),
+                TextColumn::make('client_name')
+                    ->label("Name"),
+
+                TextColumn::make('client_title')
+                    ->label("Title"),
+
+                TextColumn::make('message')
+                    ->label("Review Message")
+                    ->limit(50),
+
 
                 ToggleColumn::make('show_on_home_page'),
             ])
@@ -90,14 +98,14 @@ class ProjectResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListProjects::route('/'),
-            'create' => Pages\CreateProject::route('/create'),
-            'edit' => Pages\EditProject::route('/{record}/edit'),
+            'index' => Pages\ListTestimonials::route('/'),
+            'create' => Pages\CreateTestimonial::route('/create'),
+            'edit' => Pages\EditTestimonial::route('/{record}/edit'),
         ];
     }
 
     public static function getGloballySearchableAttributes(): array
     {
-        return ['name'];
+        return [];
     }
 }

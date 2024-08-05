@@ -19,6 +19,7 @@ use Filament\Tables\Columns\BooleanColumn;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
 class ServiceResource extends Resource
@@ -63,18 +64,17 @@ class ServiceResource extends Resource
     {
         return $table
             ->columns([
+                ImageColumn::make('home_page_icon')
+                    ->label('Icon')
+                    ->size(40),
+
                 TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
 
-                ImageColumn::make('home_page_icon')
-                    ->label('Icon')
-                    ->size(20),
-
                 TextColumn::make('home_page_description')->limit(50),
 
-                IconColumn::make('show_on_home_page')
-                    ->boolean(),
+                ToggleColumn::make('show_on_home_page'),
             ])
             ->filters([
                 //

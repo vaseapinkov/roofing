@@ -2,13 +2,19 @@
     'type' => 'primary',
     'icon' => null,
     'iconSize' => 'size-4',
+    'size' => 'md'
 ])
-@php
-    $classes = match ($type) {
-            'secondary' => 'bg-gray-500 hover:bg-gray-700 text-white py-2 px-4 rounded',
-            default => 'bg-primary-500 hover:bg-secondary font-heading text-white text-lg px-[31px] py-5 rounded',
-        };
-@endphp
+<?php
+$paddings = match ($size) {
+    'sm' => 'px-5 py-4',
+    'md' => 'px-[31px] py-5',
+};
+
+$classes = match ($type) {
+    'secondary' => "bg-gray-500 hover:bg-gray-700 text-white rounded $paddings",
+    default => "bg-primary-500 hover:bg-secondary font-heading text-white text-lg rounded $paddings",
+};
+?>
 <a {{$attributes->merge(['class' => "$classes flex items-center gap-4 leading-none"])}}>
     {{ $slot }}
 

@@ -32,6 +32,7 @@ export default {
                 },
                 "gray": "#EDF0FF",
                 "gray-light": "#F4F6FF",
+                "gray-light-alt": "#B8B8B8",
                 "gray-body": "#61657E",
                 "gray-title": "#1C1C1C",
             },

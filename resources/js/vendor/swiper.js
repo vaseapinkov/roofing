@@ -12,3 +12,17 @@ new Swiper('#home-swiper', {
         disableOnInteraction: false,
     },
 });
+
+new Swiper('#testimonials-slider', {
+    loop: true,
+    slidesPerView: 1,
+    centeredSlides: true,
+    speed: 2000,
+    autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+    },
+});

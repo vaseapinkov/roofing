@@ -10,5 +10,7 @@
     <x-home.projects/>
 
     <x-home.counter/>
+
+    <x-home.testimonials/>
 </div>
 

@@ -8,6 +8,7 @@
     $navItems = [
         [
             'name' => 'Home',
+            'link' => route('home'),
         ],
         [
             'name' => 'Services',
@@ -19,9 +20,11 @@
         ],
         [
             'name' => 'About Us',
+            'link' => route('home')
         ],
         [
             'name' => 'Contact',
+            'link' => route('contact-us')
         ],
     ];
 
@@ -33,9 +36,9 @@
                     {{$navItem['name']}}
                 </x-layout.header-dropdown>
             @else
-                <button class="py-10 px-5 font-bold">
+                <a class="py-10 px-5 font-bold" href="{{$navItem['link']}}">
                     {{$navItem['name']}}
-                </button>
+                </a>
             @endif
         @endforeach
     </nav>

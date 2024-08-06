@@ -21,7 +21,7 @@
                                 <p class="italic text-gray-body text-lg mb-5 pointer-events-none">{{$testimonial->message}}</p>
 
                                 <div class="flex gap-4 items-center pointer-events-none">
-                                    <img class="rounded-full h-[80px] aspect-square" src="{{'storage/' .asset($testimonial->client_avatar)}}" alt="Customer Avatar">
+                                    <img class="rounded-full h-[80px] aspect-square" src="{{asset('storage/' .$testimonial->client_avatar)}}" alt="Customer Avatar">
 
                                     <div class="font-heading">
                                         <h5 class="text-gray-title text-xl font-bold">{{$testimonial->client_name}}</h5>

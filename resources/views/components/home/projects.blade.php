@@ -26,7 +26,7 @@ $projects = \App\Models\Project::where('show_on_home_page', true)->get();
 
                     <div class="relative w-full">
                         <div class="absolute z-100 transform left-[120px] -translate-y-1/2 rotate-[19deg]">
-                            <img class="rounded-20 max-h-0 opacity-0 group-hover:opacity-100 group-hover:max-h-[300px]  transition-all duration-500" src="{{'storage/' .asset($project->home_page_image)}}" alt="Project Image">
+                            <img class="rounded-20 max-h-0 opacity-0 group-hover:opacity-100 group-hover:max-h-[300px]  transition-all duration-500" src="{{asset('storage/' .$project->home_page_image)}}" alt="Project Image">
                         </div>
                     </div>
 

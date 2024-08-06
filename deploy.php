@@ -18,13 +18,14 @@ host('staging.vaseapincov.com')
     ->set('remote_user', 'deployer')
     ->set('deploy_path', '/var/www/staging.vaseapincov.com');
 
-// Hooks
-//before('deploy:symlink', 'artisan:migrate');
-
-// Task install npm packages
-before('deploy:symlink', function () {
-    run('cd {{release_path}} && npm install');
+// Tasks
+task('build:assets', function () {
+    run('cd {{release_path}} && npm install && npm run build');
 });
+
+// Hooks
+before('deploy:symlink', 'artisan:migrate');
+before('deploy:symlink', 'build:assets');
 
 
 after('deploy:failed', 'deploy:unlock');

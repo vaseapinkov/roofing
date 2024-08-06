@@ -17,7 +17,7 @@ $services = \App\Models\Service::where('show_on_home_page', true)->get();
                     <div class="py-[50px] px-[45px]">
                         <div class="group-hover:-mt-[50%] group-hover:opacity-0 transition-all duration-500 ease-in">
                             <div class="bg-primary-500 size-24 p-4 rounded-full flex items-center justify-center mb-[55px] shadow-glow">
-                                <img class="max-w-full h-auto" src="{{asset($service->home_page_icon)}}" alt="Icon: {{$service->name}}">
+                                <img class="max-w-full h-auto" src="{{'storage/' .asset($service->home_page_icon)}}" alt="Icon: {{$service->name}}">
                             </div>
 
                             <h4 class="text-2xl font-heading font-medium">{{$service->name}}</h4>

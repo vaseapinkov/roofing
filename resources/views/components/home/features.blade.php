@@ -24,7 +24,7 @@ $features = \App\Models\Feature::where('show_on_home_page', true)->get();
 
                     <div class="absolute w-[190px] h-[190px] rounded-full -bottom-[78px] -right-[58px] bg-primary-100">
                         <div class="absolute z-1 transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 w-[155px] h-[155px] rounded-full  p-[40px] bg-primary-400 group-hover:bg-primary-500 transition duration-300">
-                            <img class="group-hover:brightness-0 group-hover:invert transition duration-300" src="{{asset($feature->home_page_icon)}}" alt="Icon for {{$feature->name}}">
+                            <img class="group-hover:brightness-0 group-hover:invert transition duration-300" src="{{asset('storage/' . $feature->home_page_icon)}}" alt="Icon for {{$feature->name}}">
                         </div>
                     </div>
                 </div>

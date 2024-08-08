@@ -12,7 +12,10 @@
         ],
         [
             'name' => 'Services',
-            'options' => \App\Models\Service::all()
+            'options' => [
+                ['name' => 'All Services', 'link' => route('services')],
+                ...\App\Models\Service::all(),
+            ]
         ],
         [
             'name' => 'Projects',
@@ -32,7 +35,7 @@
     <nav class="flex gap-10">
         @foreach($navItems as $navItem)
             @isset($navItem['options'])
-                <x-layout.header-dropdown :options="$navItem['options']" option-name-key="name" option-url-key="name">
+                <x-layout.header-dropdown :options="$navItem['options']" option-name-key="name" option-url-key="link">
                     {{$navItem['name']}}
                 </x-layout.header-dropdown>
             @else

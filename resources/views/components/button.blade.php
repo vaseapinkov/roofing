@@ -11,7 +11,7 @@ $paddings = match ($size) {
 };
 
 $classes = match ($type) {
-    'secondary' => "bg-gray-500 hover:bg-gray-700 text-white rounded $paddings",
+    'secondary' => "bg-secondary hover:bg-secondary-600 font-heading text-white text-lg rounded $paddings",
     default => "bg-primary-500 hover:bg-secondary font-heading text-white text-lg rounded $paddings",
 };
 ?>

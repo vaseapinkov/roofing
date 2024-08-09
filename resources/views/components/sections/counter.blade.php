@@ -8,7 +8,7 @@ $counterData = [
 ?>
 <section class="container pt-[120px] pb-[90px]">
 
-    <div class="bg-gray-light rounded-10 py-10 flex flex-col 2xl:flex-row gap-10 2xl:gap-0 justify-around">
+    <div class="bg-gray-light rounded-10 py-10 flex flex-col sm:flex-row flex-wrap gap-10 2xl:gap-0 justify-around">
 
         @foreach($counterData as $counter)
             <div class="font-heading text-center">

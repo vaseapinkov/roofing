@@ -2,9 +2,9 @@
 <section class="bg-gray-light pt-[120px] pb-[90px]">
     <div class="container">
 
-        <div class="grid grid-cols-1 2xl:grid-cols-2 gap-16 items-stretch">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-                <img class="max-w-full rounded-10" src="{{Vite::asset('resources/images/testimonial_img.jpg')}}" alt="Testimonial">
+                <img class="max-w-full rounded-10 mx-auto" src="{{Vite::asset('resources/images/testimonial_img.jpg')}}" alt="Testimonial">
             </div>
 
             <div class="flex flex-col">

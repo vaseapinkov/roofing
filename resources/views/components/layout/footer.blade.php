@@ -1,7 +1,7 @@
 <footer class="bg-cover" style="background-image:url({{Vite::asset('resources/images/footer_bg.jpg')}});" alt="Construction Illustration">
     <div class="container py-[90px]">
 
-        <div class="grid grid-cols-4 justify-items-center mb-10">
+        <div class="grid grid-cols-1 2xl:grid-cols-4 gap-12 2xl:gap-0 justify-items-start 2xl:justify-items-center mb-10">
             <div>
                 <h4 class="text-2xl text-white font-bold mb-4">About Us</h4>
                 <p class="text-gray-light-alt mb-8">There are many variations of passages of Lore Ipsum available, but the majori have alteration in some form, by injected humour, ondomised word which don't look</p>
@@ -42,23 +42,23 @@
             </div>
         </div>
 
-        <div class="flex justify-between items-center px-8 py-4 bg-primary-600 rounded-5">
+        <div class="flex flex-col 2xl:flex-row gap-8 2xl:gap-0 justify-between items-center px-8 py-6 2xl:py-4 bg-primary-600 rounded-5">
             <div>
                 <img src="{{Vite::asset('resources/images/w_logo.svg')}}" alt="Logo">
             </div>
-            <div class="bg-primary-500 flex gap-8 p-4 rounded-5">
-                <div class="bg-white w-[70px] aspect-square flex items-center justify-center rounded-5">
+            <div class="bg-primary-500 flex flex-col 2xl:flex-row gap-4 2xl:gap-8 p-4 rounded-5 text-start 2xl:text-center">
+                <div class="bg-white w-[70px] aspect-square flex items-center justify-center rounded-5 mx-auto 2xl:mx-0">
                     <svg class="size-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <path class="fill-black" d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
                     </svg>
                 </div>
-                <div class="text-white font-heading">
+                <div class="text-white font-heading text-center 2xl:text-start">
                     <p class="text-lg">Phone No</p>
                     <p class="text-2xl font-semibold">+0000 (123) 456 88</p>
                 </div>
             </div>
 
-            <div class="flex gap-8 items-center">
+            <div class="flex gap-2 2xl:gap-8 items-center flex-col 2xl:flex-row">
                 <p class="text-2xl text-white font-semibold">Follow Us:</p>
 
                 <div class="flex gap-2 items-center">

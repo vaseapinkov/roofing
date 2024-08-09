@@ -7,15 +7,15 @@ $services = \App\Models\Service::where('show_on_home_page', true)->get();
 
         <x-section-title title="Our Services Are" sub-title="What We Do"/>
 
-        <div class="grid grid-cols-1 2xl:grid-cols-3 gap-x-4 gap-y-3 justify-items-stretch">
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-3 justify-items-stretch">
             @foreach($services as $service)
-                <div class="group relative overflow-hidden bg-white shadow-card rounded-5 h-full">
-                    <img class="opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in absolute w-full h-full" src="{{Vite::asset('resources/images/services.jpg')}}" alt="Service {{$service->name}}}">
-                    <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in absolute w-full h-full bg-gradient-to-r from-primary-500/85 to-primary-500/40 rounded-5">
+                <div class="group relative overflow-hidden bg-white shadow-card rounded-5 h-full lg:min-h-[283px]">
+                    <img class="opacity-0 lg:group-hover:opacity-100 transition-all duration-500 ease-in absolute w-full h-full" src="{{Vite::asset('resources/images/services.jpg')}}" alt="Service {{$service->name}}}">
+                    <div class="opacity-0 lg:group-hover:opacity-100 transition-all duration-500 ease-in absolute w-full h-full bg-gradient-to-r from-primary-500/85 to-primary-500/40 rounded-5">
                     </div>
 
                     <div class="py-[50px] px-[45px]">
-                        <div class="group-hover:-mt-[50%] group-hover:opacity-0 transition-all duration-500 ease-in">
+                        <div class="lg:group-hover:-mt-[50%] lg:group-hover:opacity-0 transition-all duration-500 ease-in">
                             <div class="bg-primary-500 size-24 p-4 rounded-full flex items-center justify-center mb-[55px] shadow-glow">
                                 <img class="max-w-full h-auto" src="{{asset('storage/' .$service->home_page_icon)}}" alt="Icon: {{$service->name}}">
                             </div>
@@ -23,7 +23,7 @@ $services = \App\Models\Service::where('show_on_home_page', true)->get();
                             <h4 class="text-2xl font-heading font-medium">{{$service->name}}</h4>
                             <h4 class="absolute top-0 right-0 px-2 text-[100px] text-clip bg-gradient-to-b from-primary-500/20 to-primary-100/0 inline-block leading-none text-transparent bg-clip-text">{{$loop->index < 10 ? "0".$loop->index+1 : $loop->index+1}}</h4>
                         </div>
-                        <div class="absolute hidden group-hover:flex flex-col transition-all duration-500 ease-in text-white h-[calc(100%-100px)]">
+                        <div class="absolute hidden lg:group-hover:flex flex-col transition-all duration-500 ease-in text-white h-[calc(100%-100px)]">
                             <h4 class="text-2xl font-heading font-medium mb-4">{{$service->name}}</h4>
                             <p class="mb-4">{{$service->home_page_description}}</p>
                             <a class="relative group/link flex gap-2 items-center text-lg rounded-full px-4 py-1 w-fit mt-auto" href="#">

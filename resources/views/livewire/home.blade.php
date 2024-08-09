@@ -12,7 +12,7 @@
     @endif
 
     @if(count($projects))
-        <x-home.projects/>
+        <x-home.projects :projects="$projects"/>
     @endif
 
     @if(count($testimonials))

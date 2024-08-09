@@ -39,7 +39,7 @@
                     {{$navItem['name']}}
                 </x-layout.header-dropdown>
             @else
-                <a class="py-10 px-5 font-bold" href="{{$navItem['link']}}">
+                <a class="py-10 px-5 font-bold hover:text-secondary text-gray-title" href="{{$navItem['link']}}">
                     {{$navItem['name']}}
                 </a>
             @endif

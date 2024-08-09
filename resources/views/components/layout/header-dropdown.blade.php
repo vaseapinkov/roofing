@@ -33,7 +33,7 @@
             :aria-expanded="open"
             :aria-controls="$id('dropdown-button')"
             type="button"
-            class="flex items-center gap-2"
+            class="flex items-center gap-2 hover:text-secondary text-gray-title"
         >
             {{$slot}}
 
@@ -54,7 +54,7 @@
             class="absolute -left-8 mt-10 w-52 rounded-b-10 bg-white shadow-md"
         >
             @foreach($options as $option)
-                <a href="{{$option[$optionUrlKey]}}" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-8 py-4 text-left text-sm hover:text-primary-500 hover:bg-gray-50 disabled:text-gray-500 transition-all duration-300">
+                <a href="{{$option[$optionUrlKey]}}" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-8 py-4 text-left text-sm hover:text-secondary text-gray-title hover:bg-gray-50 disabled:text-gray-500 transition-all duration-300">
                     {{$option[$optionNameKey]}}
                 </a>
             @endforeach

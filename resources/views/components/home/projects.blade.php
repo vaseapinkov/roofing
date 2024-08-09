@@ -4,7 +4,7 @@ $projects = \App\Models\Project::where('show_on_home_page', true)->get();
 <section class="pt-[120px] pb-[90px] bg-no-repeat overflow-hidden bg-cover" style="background-image:url({{Vite::asset('resources/images/project_bg.jpg')}});">
     <div class="container">
 
-        <div class="flex flex-col lg:flex-row gap-10 lg:gap-0 justify-between items-end mb-[50px] text-center">
+        <div class="flex flex-col lg:flex-row gap-10 lg:gap-0 justify-between items-end mb-[50px] text-center lg:text-start">
             <x-section-title class="!mb-0" :alt-colors="true" :centred="false" title="Explore Our Latest Projects" sub-title="Latest Projects"/>
             <x-button class="w-fit h-fit mx-auto lg:mx-0" icon="arrow-right">View all projects</x-button>
         </div>

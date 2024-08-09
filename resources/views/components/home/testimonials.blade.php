@@ -3,8 +3,8 @@
 {{--
 1. https://maps.app.goo.gl/mA9qytPd6zTXc6fv5
 2. https://maps.app.goo.gl/4kxrTfs4mFDhifTb8
-3. https://maps.app.goo.gl/QkUfq8j1jyeu4Puf9
-4. https://maps.app.goo.gl/2kNTtY6L3MakVbZ59
+3. https://maps.app.goo.gl/UqHAnZfvPsMrsEVN7
+4. https://maps.app.goo.gl/yq2tVQn71cyTcYoq9
 5. https://maps.app.goo.gl/hxDkV8VFfn4xKsreA
 --}}
 

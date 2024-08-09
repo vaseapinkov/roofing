@@ -44,7 +44,8 @@ $features = [
                         <div class="bg-primary-500 rounded-5 h-[63px] w-[63px] flex items-center justify-center">
                             <img src="{{Vite::asset('resources/images/about-us/icon-2.svg')}}" alt="Icon">
                         </div>
-                        <p class="flex-1 font-medium font-heading text-gray-title">We use professional and experienced person</p>
+{{--TODO: Change icon--}}
+                        <p class="flex-1 font-medium font-heading text-gray-title">We work with certified high quality material</p>
                     </div>
                 </div>
             </div>

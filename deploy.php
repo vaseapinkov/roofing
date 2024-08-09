@@ -16,7 +16,8 @@ add('writable_dirs', []);
 
 host('staging.vaseapincov.com')
     ->set('remote_user', 'deployer')
-    ->set('deploy_path', '/var/www/staging.vaseapincov.com');
+    ->set('deploy_path', '/var/www/staging.vaseapincov.com')
+    ->set('branch', 'release-1');
 
 // Custom Tasks
 

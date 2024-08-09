@@ -1,3 +1,13 @@
+{{--
+
+1. Book Call
+2. Free Roof inspection
+3. Appointment
+
+
+Fields:
+Phone, Email
+--}}
 <section id="book-appointment" class="container pt-[120px]">
 
     <x-section-title :centred="false" title="Book Your Appointment" sub-title="Your roof require professional attention"/>

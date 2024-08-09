@@ -3,17 +3,17 @@
 
     <section class="container py-[120px] bg-white">
 
-        <div class="grid grid-cols-2 gap-8">
-            <div class="rounded-10 p-[65px]" style="background-image:url({{Vite::asset('resources/images/contact_form_bg.jpg')}});">
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+            <div class="rounded-10 p-[30px] 2xl:p-[65px]" style="background-image:url({{Vite::asset('resources/images/contact_form_bg.jpg')}});">
                 <h2 class="text-gray-title font-bold text-4xl font-heading mb-4">Contact Us</h2>
                 <p class="text-gray-body text-sm">Send us a message and we' ll respond as soon as possible</p>
 
                 <form wire:submit.prevent="saveMessage">
                     <div class="mt-12 grid grid-cols-2 gap-x-6 gap-y-4">
-                        <input wire:model="firs_name" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4" type="text" placeholder="First Name*">
-                        <input wire:model="last_name" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4" type="text" placeholder="Last Name*">
-                        <input wire:model="email" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4" type="text" placeholder="Email Address*">
-                        <input wire:model="phone" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4" type="text" placeholder="Phone*">
+                        <input wire:model="firs_name" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2 sm:col-span-1" type="text" placeholder="First Name*">
+                        <input wire:model="last_name" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2 sm:col-span-1" type="text" placeholder="Last Name*">
+                        <input wire:model="email" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2 sm:col-span-1" type="text" placeholder="Email Address*">
+                        <input wire:model="phone" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2 sm:col-span-1" type="text" placeholder="Phone*">
                         <input wire:model="subject" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2" type="text" placeholder="Subject">
                         <textarea wire:model="message" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2" rows="8" placeholder="Your message here"></textarea>
 
@@ -29,22 +29,22 @@
             </div>
 
             <div class="grid grid-rows-2 gap-8">
-                <div class="bg-gray-light rounded-10 p-[65px]">
+                <div class="bg-gray-light rounded-10 p-[30px] 2xl:p-[65px]">
                     <h2 class="text-gray-title font-bold text-4xl font-heading mb-4">Need Any Help</h2>
                     <p class="text-gray-body text-sm mb-8">Call us or message and we' ll respond as soon as possible</p>
 
-                    <div class="grid grid-cols-3">
-                        <div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 text-center">
+                        <div class="flex flex-col justify-center items-center">
                             <div class="h-[60px] aspect-square bg-primary-500 rounded-full mb-4"></div>
                             <a href="#" class="text-gray-title hover:text-primary-500 mb-1.5">+(323) 9847 3847 383</a>
                             <a href="#" class="text-gray-title hover:text-primary-500">+(323) 9847 3847 383</a>
                         </div>
-                        <div>
+                        <div class="flex flex-col justify-center items-center">
                             <div class="h-[60px] aspect-square bg-primary-500 rounded-full mb-4"></div>
                             <a href="#" class="text-gray-title hover:text-primary-500 mb-1.5">info@gmail.com</a>
                             <a href="#" class="text-gray-title hover:text-primary-500">sales@gmail.com</a>
                         </div>
-                        <div>
+                        <div class="flex flex-col justify-center items-center">
                             <div class="h-[60px] aspect-square bg-primary-500 rounded-full mb-4"></div>
                             <p class="text-gray-title">
                                 4517 Washington Ave. 32 <br>

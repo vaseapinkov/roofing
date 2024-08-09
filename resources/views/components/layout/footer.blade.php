@@ -1,43 +1,51 @@
 <footer class="bg-cover" style="background-image:url({{Vite::asset('resources/images/footer_bg.jpg')}});" alt="Construction Illustration">
     <div class="container py-[90px]">
 
-        <div class="grid grid-cols-2 md:grid-cols-2 2xl:grid-cols-4 gap-12 lg:gap-8 justify-items-start 2xl:justify-items-center mb-10">
-            <div class="col-span-2 md:col-span-1">
+        <div class="grid grid-cols-2 md:grid-cols-2 2xl:grid-cols-4 gap-12 lg:gap-8 justify-items-start mb-10">
+            <div class="col-span-2 md:col-span-2 max-w-[400px]">
                 <h4 class="text-2xl text-white font-bold mb-4">About Us</h4>
-                <p class="text-gray-light-alt mb-8">There are many variations of passages of Lore Ipsum available, but the majori have alteration in some form, by injected humour, ondomised word which don't look</p>
+                <p class="text-gray-light-alt mb-8">At M&R Roofing Company, we provide a full range of roofing services with dedication and precision. From inspection to efficient replacement, we handle each step with care to make your experience seamless and stress-free, so you can focus on your home and family.</p>
 
+                {{-- TODO: Dow we need it? --}}
+                {{--
                 <p class="text-white text-lg font-medium mb-4">Subscribe to Our Newsletter</p>
                 <div class="flex">
                     <input class="rounded-l-5 text-gray-body text-sm px-4" type="text" placeholder="Enter your email">
                     <x-button class="!rounded-l-none" size="sm">Subscribe</x-button>
                 </div>
+                --}}
             </div>
-            <div class="col-span-2 md:col-span-1">
-                <h4 class="text-2xl text-white font-bold mb-4">Instagram posts</h4>
-                <div class="grid grid-cols-3 gap-4">
+            <div class="col-span-2 md:col-span-2">
+                <h4 class="text-2xl text-white font-bold mb-4">Latest Instagram posts</h4>
+                <div class="grid grid-cols-6 gap-4">
                     @foreach(range(1, 6) as $item)
-                        <img class="rounded-5 w-[120px] aspect-square" src="{{Vite::asset('resources/images/f_insta_img01.jpg')}}" alt="Instagram Image">
+                        <a href="{{config('contacts.in_link')}}" target="_blank">
+                            <img class="rounded-5 w-[120px] aspect-square" src="{{Vite::asset('resources/images/instagram/'.$item.'.png')}}" alt="Instagram Image">
+                        </a>
                     @endforeach
                 </div>
             </div>
-            <div class="col-span-2 sm:col-span-1">
-                <?php $services = \App\Models\Service::where('show_on_home_page', true)->get(); ?>
+            {{--  TODO: Uncomment when Deicated Pages are redy  --}}
+            {{--
+                        <div class="col-span-2 sm:col-span-1">
+                            <?php $services = \App\Models\Service::where('show_on_home_page', true)->get(); ?>
 
-                <h4 class="text-2xl text-white font-bold mb-4">Our Services</h4>
-                <ul class="space-y-2">
-                    @foreach($services as $service)
-                        <li class="text-gray-light-alt"> >> {{$service->name}}</li>
-                    @endforeach
-                </ul>
-            </div>
-            <div class="col-span-2 sm:col-span-1">
-                <h4 class="text-2xl text-white font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2">
-                    @foreach($services as $service)
-                        <li class="text-gray-light-alt"> >> {{$service->name}}</li>
-                    @endforeach
-                </ul>
-            </div>
+                            <h4 class="text-2xl text-white font-bold mb-4">Our Services</h4>
+                            <ul class="space-y-2">
+                                @foreach($services as $service)
+                                    <li class="text-gray-light-alt"> >> {{$service->name}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <h4 class="text-2xl text-white font-bold mb-4">Quick Links</h4>
+                            <ul class="space-y-2">
+                                @foreach($services as $service)
+                                    <li class="text-gray-light-alt"> >> {{$service->name}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    --}}
         </div>
 
         <div class="flex flex-col md:flex-row gap-8 md:gap-0 justify-between items-center px-8 py-6 md:py-4 bg-primary-600 rounded-5">
@@ -52,7 +60,7 @@
                 </div>
                 <div class="text-white font-heading text-center md:text-start">
                     <p class="text-lg">Phone No</p>
-                    <p class="text-2xl font-semibold">+0000 (123) 456 88</p>
+                    <a href="tel:{{config('contacts.phone')}}" class="text-2xl font-semibold">{{config('contacts.phone')}}</a>
                 </div>
             </div>
 
@@ -60,14 +68,22 @@
                 <p class="text-2xl text-white font-semibold">Follow Us:</p>
 
                 <div class="flex gap-2 items-center">
-                    <div class="w-[42px] aspect-square bg-white rounded-full">
-                    </div>
-                    <div class="w-[42px] aspect-square bg-white rounded-full">
-                    </div>
-                    <div class="w-[42px] aspect-square bg-white rounded-full">
-                    </div>
-                    <div class="w-[42px] aspect-square bg-white rounded-full">
-                    </div>
+                    <a href="{{config('contacts.in_link')}}" target="_blank" class="w-[42px] aspect-square bg-white rounded-full text-primary-500 flex items-center justify-center">
+                        <svg class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                        </svg>
+                    </a>
+                    <a href="{{config('contacts.fb_link')}}" target="_blank" class="w-[42px] aspect-square bg-white rounded-full text-primary-500 flex items-center justify-center">
+                        <svg class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path fill="currentColor" d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/>
+                        </svg>
+                    </a>
+                    <a href="{{config('contacts.yt_link')}}" target="_blank" class="w-[42px] aspect-square bg-white rounded-full text-primary-500 flex items-center justify-center">
+                        <svg class="size-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                            <path fill="currentColor" d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>

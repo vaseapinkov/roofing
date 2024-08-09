@@ -11,7 +11,7 @@ return new class extends Migration {
             $table->id();
             $table->string('name');
             $table->string('sub_title');
-            $table->string('home_page_description');
+            $table->text('home_page_description');
             $table->string('home_page_image');
             $table->boolean('show_on_home_page');
             $table->timestamps();

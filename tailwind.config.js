@@ -28,10 +28,14 @@ export default {
                     400: "#b8d5ff",
                     500: "#1F3A65",
                     600: "#113061",
+                    // '600': "#ff4040",
+                    // '500': "#EF1E24"
                 },
                 "secondary": {
                     '400': "#ff4040",
                     DEFAULT: "#EF1E24"
+                    // '400': "#1F3A65",
+                    // DEFAULT: "#113061"
                 },
                 "gray": "#EDF0FF",
                 "gray-light": "#F4F6FF",

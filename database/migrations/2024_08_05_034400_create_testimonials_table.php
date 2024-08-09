@@ -11,7 +11,6 @@ return new class extends Migration {
             $table->id();
             $table->text('message');
             $table->string('client_name');
-            $table->string('client_title')->nullable();
             $table->string('client_avatar');
             $table->boolean('show_on_home_page');
             $table->timestamps();

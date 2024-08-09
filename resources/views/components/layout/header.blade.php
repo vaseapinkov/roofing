@@ -7,28 +7,44 @@
     <?php
     $navItems = [
         [
-            'name' => 'Home',
-            'link' => route('home'),
+            'name' => "About Us",
+            'link' => "#about-us",
         ],
         [
-            'name' => 'Services',
-            'options' => [
-                ['name' => 'All Services', 'link' => route('services')],
-                ...\App\Models\Service::all(),
-            ]
+            'name' => "Services",
+            'link' => "#services",
         ],
         [
-            'name' => 'Projects',
-            'options' => \App\Models\Project::all()
+            'name' => "Reviews",
+            'link' => "#reviews",
         ],
         [
-            'name' => 'About Us',
-            'link' => route('home')
+            'name' => "Contact Us",
+            'link' => route('contact-us'),
         ],
-        [
-            'name' => 'Contact',
-            'link' => route('contact-us')
-        ],
+//        [
+//            'name' => 'Home',
+//            'link' => route('home'),
+//        ],
+//        [
+//            'name' => 'Services',
+//            'options' => [
+//                ['name' => 'All Services', 'link' => route('services')],
+//                ...\App\Models\Service::all(),
+//            ]
+//        ],
+//        [
+//            'name' => 'Projects',
+//            'options' => \App\Models\Project::all()
+//        ],
+//        [
+//            'name' => 'About Us',
+//            'link' => route('home')
+//        ],
+//        [
+//            'name' => 'Contact',
+//            'link' => route('contact-us')
+//        ],
     ];
 
     ?>
@@ -47,6 +63,6 @@
     </nav>
 
     <div class="hidden xl:block">
-        <x-button type="primary" icon="arrow-right">Get a Quote</x-button>
+        <x-button href="{{ Route::current() === 'home' ? '' : route('home')}}#book-appointment" type="primary" icon="arrow-right">Get a Quote</x-button>
     </div>
 </header>

@@ -1,12 +1,17 @@
 <?php
-$features = ['32k Partners have worked us.', 'Professional and experienced human resources.', 'Provide the best roof services.']
+$features = [
+    'Complete Circle of Roofing Services',
+    'High-Quality Materials and Long-Lasting Protection',
+    'Exceptional Craftsmanship and Customer Care'
+]
 ?>
-<section id="about-us" class="container mx-auto pb-[120px]">
+<section id="about-us" class="container mx-auto pt-[120px] pb-[120px]">
 
     <div class="flex flex-col-reverse lg:flex-row">
         <div class="w-full xl:w-[40%]">
             <x-section-title :centred="false" title="We're committed to Roofing Excellence" sub-title="About Our Company"/>
-            <p class="text-gray-body mb-4">There are many variations of passages of Lorem Ipsum available, but the majori have suffered alteration in some form, by injected humour, or randomised word which don't look even slightly believable.</p>
+            <p class="text-gray-body mb-4">At M&R Roofing Company, we are a team of professionals committed to providing a complete range of roofing services with precision and care. We use high-quality, certified materials to enhance your home’s appeal and offer lasting protection. With a focus on exceptional craftsmanship and customer service, we handle every step of the process to ensure your experience is seamless and stress-free. Trust M&R Roofing to protect your investment and provide
+                peace of mind…</p>
             <ul class="mb-8">
                 @foreach($features as $feature)
                     <li class="flex items-center mb-2.5">
@@ -19,7 +24,8 @@ $features = ['32k Partners have worked us.', 'Professional and experienced human
                 @endforeach
             </ul>
 
-            <x-button icon="arrow-right" class="w-fit">Learn more</x-button>
+            {{-- TODO:Uncommnet when dedicated page created --}}
+            {{--            <x-button icon="arrow-right" class="w-fit">Learn more</x-button>--}}
         </div>
         <div class="w-full xl:w-[60%]">
             <div class="flex justify-center xl:justify-end items-center relative">
@@ -31,7 +37,7 @@ $features = ['32k Partners have worked us.', 'Professional and experienced human
                         <div class="bg-primary-500 rounded-5 h-[63px] w-[63px] flex items-center justify-center">
                             <img src="{{Vite::asset('resources/images/about-us/icon-1.svg')}}" alt="Icon">
                         </div>
-                        <p class="flex-1 font-medium font-heading text-gray-title">We have more than 10 years of experience</p>
+                        <p class="flex-1 font-medium font-heading text-gray-title">We have more than 43 years of experience</p>
                     </div>
 
                     <div class="absolute bg-white shadow-3xl p-5 flex items-center gap-5 rounded-10 left-[145px] bottom-[-38px] w-[352px]">

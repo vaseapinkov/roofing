@@ -1,18 +1,26 @@
 <div>
     <x-home.hero/>
 
-    <x-home.features/>
+    @if(count($features))
+        <x-home.features :features="$features"/>
+    @endif
 
     <x-home.about-us/>
 
-    <x-sections.services/>
+    @if(count($services))
+        <x-sections.services :services="$services"/>
+    @endif
 
-    <x-home.projects/>
+    @if(count($projects))
+        <x-home.projects/>
+    @endif
+
+    @if(count($testimonials))
+        <x-home.testimonials :testimonials="$testimonials"/>
+    @endif
 
     <x-sections.counter/>
 
-    <x-home.testimonials/>
-
-    <x-home.contact-us/>
+    <x-sections.book-appointment/>
 </div>
 

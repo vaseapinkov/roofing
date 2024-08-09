@@ -12,8 +12,10 @@ class Testimonial extends Model
     protected $fillable = [
         'message',
         'client_name',
-        'client_title',
         'client_avatar',
         'show_on_home_page',
+        'stars',
+        'project_photo',
+        'review_link',
     ];
 }

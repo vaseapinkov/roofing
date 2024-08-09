@@ -3,7 +3,7 @@
         <div class="bg-primary-500/80 h-full w-full py-[90px]">
 
             <div class="container flex flex-col xl:flex-row text-center xl:text-start justify-between">
-                <x-section-title class="mb-0" alt-colors :centred="false" title="Need Roofing  Any Service" sub-title="Quality Roofing Contact Form"/>
+                <x-section-title class="mb-0" alt-colors :centred="false" title="Get in Touch with Us" sub-title="Request a Call Right Now"/>
 
                 <div class="flex flex-row items-center mx-auto xl:mx-0">
                     <div class="flex flex-col xl:flex-row gap-5">

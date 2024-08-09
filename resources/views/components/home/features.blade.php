@@ -1,6 +1,4 @@
-<?php
-$features = \App\Models\Feature::where('show_on_home_page', true)->get();
-?>
+@props(['features'])
 <section id="features" class="container mx-auto pt-[120px] pb-[90px]">
 
     <div class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 justify-items-stretch place-content-center flex-wrap gap-x-4 gap-y-10">

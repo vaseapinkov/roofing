@@ -2,7 +2,8 @@
     'type' => 'primary',
     'icon' => null,
     'iconSize' => 'size-4',
-    'size' => 'md'
+    'size' => 'md',
+    'href' => null,
 ])
 <?php
 $paddings = match ($size) {
@@ -16,8 +17,8 @@ $classes = match ($type) {
 };
 ?>
 
-@isset($attributes->href)
-    <a {{$attributes->merge(['class' => "$classes flex items-center gap-4 leading-none"])}}>
+@if($href)
+    <a href="{{$href}}" {{$attributes->merge(['class' => "$classes flex items-center gap-4 leading-none"])}}>
         {{ $slot }}
 
         @if($icon === 'arrow-right')
@@ -32,4 +33,4 @@ $classes = match ($type) {
             <x-arrow-right :class="$iconSize" stroke-width="4"/>
         @endif
     </button>
-@endisset
+@endif

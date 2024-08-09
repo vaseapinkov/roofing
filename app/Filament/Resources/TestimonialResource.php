@@ -44,15 +44,26 @@ class TestimonialResource extends Resource
                     ->hiddenOn('create')
                     ->content(fn(?Testimonial $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
 
+                TextInput::make('review_link')
+                    ->required(),
+
                 Textarea::make('message')
+                    ->rows(10)
                     ->required(),
 
                 TextInput::make('client_name')
                     ->required(),
 
-                TextInput::make('client_title'),
-
                 FileUpload::make('client_avatar')
+                    ->required(),
+
+                FileUpload::make('project_photo')
+                    ->required(),
+
+                TextInput::make('stars')
+                    ->minValue(1)
+                    ->maxValue(5)
+                    ->type('number')
                     ->required(),
 
                 Checkbox::make('show_on_home_page'),

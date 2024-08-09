@@ -1,6 +1,5 @@
-<?php
-$projects = \App\Models\Project::where('show_on_home_page', true)->get();
-?>
+@props(['projects'])
+
 <section class="pt-[120px] pb-[90px] bg-no-repeat overflow-hidden bg-cover" style="background-image:url({{Vite::asset('resources/images/project_bg.jpg')}});">
     <div class="container">
 

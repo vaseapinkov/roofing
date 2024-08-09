@@ -19,6 +19,7 @@ new Swiper('#home-swiper', {
 });
 
 new Swiper('#testimonials-slider', {
+    enabled: true,
     loop: true,
     slidesPerView: 1,
     centeredSlides: true,
@@ -29,5 +30,6 @@ new Swiper('#testimonials-slider', {
     },
     pagination: {
         el: ".swiper-pagination",
+        clickable: true,
     },
 });

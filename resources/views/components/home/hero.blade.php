@@ -8,10 +8,10 @@
             <x-text size="h1" color="white" tag="h1">Best Roofing Services and Consulting</x-text>
 
             <p class="text-white text-[20px]">
-                There are many variations of passages of Lorem as Ipsumoff available, but the majority have suffered alt.
+                Welcome to M&R Roofing Company, your trusted partner in ensuring the safety, comfort, and beauty of your home
             </p>
-            <x-button type="primary" icon="arrow-right" class="w-fit mx-auto lg:mx-0">
-                Discover more
+            <x-button href="#services" type="primary" icon="arrow-right" class="w-fit mx-auto lg:mx-0">
+                Our Services
             </x-button>
         </div>
     </div>

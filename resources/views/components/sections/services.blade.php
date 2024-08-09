@@ -7,7 +7,7 @@ $services = \App\Models\Service::where('show_on_home_page', true)->get();
 
         <x-section-title title="Our Services Are" sub-title="What We Do"/>
 
-        <div class="grid grid-cols-3 gap-x-4 gap-y-3 justify-items-stretch">
+        <div class="grid grid-cols-1 2xl:grid-cols-3 gap-x-4 gap-y-3 justify-items-stretch">
             @foreach($services as $service)
                 <div class="group relative overflow-hidden bg-white shadow-card rounded-5 h-full">
                     <img class="opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in absolute w-full h-full" src="{{Vite::asset('resources/images/services.jpg')}}" alt="Service {{$service->name}}}">

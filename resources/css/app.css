@@ -4,13 +4,20 @@
 
 
 #testimonials-slider .swiper-pagination-bullet-active{
-    @apply !bg-primary-500 !w-7 transition-all duration-500
+    @apply !bg-primary-500 !w-8 transition-all duration-500
 }
 
 #testimonials-slider .swiper-pagination-bullet{
     @apply bg-primary-500/50 w-4 rounded-10 h-1
 }
 
+
 #testimonials-slider .swiper-pagination{
-    @apply !text-end
+    @apply !text-start;
+}
+
+@screen 2xl {
+    #testimonials-slider .swiper-pagination{
+        @apply !text-end
+    }
 }

@@ -2,7 +2,7 @@
 <section class="bg-gray-light pt-[120px] pb-[90px]">
     <div class="container">
 
-        <div class="grid grid-cols-2 gap-16 items-stretch">
+        <div class="grid grid-cols-1 2xl:grid-cols-2 gap-16 items-stretch">
             <div>
                 <img class="max-w-full rounded-10" src="{{Vite::asset('resources/images/testimonial_img.jpg')}}" alt="Testimonial">
             </div>
@@ -20,7 +20,7 @@
 
                                 <p class="italic text-gray-body text-lg mb-5 pointer-events-none">{{$testimonial->message}}</p>
 
-                                <div class="flex gap-4 items-center pointer-events-none">
+                                <div class="flex gap-4 items-center pointer-events-none pb-10">
                                     <img class="rounded-full h-[80px] aspect-square" src="{{asset('storage/' .$testimonial->client_avatar)}}" alt="Customer Avatar">
 
                                     <div class="font-heading">

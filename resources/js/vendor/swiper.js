@@ -3,7 +3,7 @@ import 'swiper/css/bundle';
 
 new Swiper('#home-swiper', {
     loop: true,
-    slidesPerView: 5,
+    slidesPerView: 1,
     centeredSlides: true,
     speed: 1000,
     allowTouchMove: false,
@@ -11,6 +11,11 @@ new Swiper('#home-swiper', {
         delay: 3000,
         disableOnInteraction: false,
     },
+    breakpoints: {
+        1024: {
+            slidesPerView: 5,
+        }
+    }
 });
 
 new Swiper('#testimonials-slider', {

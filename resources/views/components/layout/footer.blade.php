@@ -42,9 +42,9 @@
             </div>
         </div>
 
-        <div class="flex justify-between items-center px-8 py-4 bg-secondary-400 rounded-5">
+        <div class="flex justify-between items-center px-8 py-4 bg-primary-600 rounded-5">
             <div>
-                <img src="{{Vite::asset('resources/images/w_logo.png')}}" alt="Logo">
+                <img src="{{Vite::asset('resources/images/w_logo.svg')}}" alt="Logo">
             </div>
             <div class="bg-primary-500 flex gap-8 p-4 rounded-5">
                 <div class="bg-white w-[70px] aspect-square flex items-center justify-center rounded-5">
@@ -75,7 +75,7 @@
         </div>
 
     </div>
-    <div class="bg-secondary-400 pt-4 pb-6">
+    <div class="bg-primary-600 pt-4 pb-6">
         <div class="container flex justify-between text-white">
             <p class="text-sm">© Copyright 2023. All Right Reserved</p>
 

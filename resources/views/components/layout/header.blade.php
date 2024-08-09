@@ -1,6 +1,6 @@
 <header class="absolute top-0 left-0 right-0 text-gray-title w-full flex justify-between items-center container mx-auto z-20">
     <a href="{{route('home')}}">
-        <img src="{{Vite::asset('resources/images/logo.png')}}" alt="Logo" width="150" class="h-auto">
+        <img src="{{Vite::asset('resources/images/logo.svg')}}" alt="Logo" width="150" class="h-auto">
     </a>
 
 

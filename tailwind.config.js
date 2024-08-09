@@ -19,16 +19,19 @@ export default {
                 },
             },
             colors: {
+                // #1F3A65 - Blue
+                // #EF1E24 - Red
                 "primary": {
-                    100: "#FFF3ED",
-                    200: "#FFEFE7",
-                    300: "#FDDDCE",
-                    400: "#FFDAC9",
-                    500: "#FE5D14",
+                    100: "#e9f0fb",
+                    200: "#e0ecff",
+                    300: "#caddfa",
+                    400: "#b8d5ff",
+                    500: "#1F3A65",
+                    600: "#113061",
                 },
                 "secondary": {
-                    '400': "#161C49",
-                    DEFAULT: "#0E1436"
+                    '400': "#ff4040",
+                    DEFAULT: "#EF1E24"
                 },
                 "gray": "#EDF0FF",
                 "gray-light": "#F4F6FF",
@@ -39,7 +42,7 @@ export default {
             boxShadow: {
                 "3xl": "4px 4px 20px rgba(0, 0, 0, 0.1)",
                 "card": "0px 0px 36px rgba(0, 0, 0, 0.08)",
-                "glow": "4px 4px 15px rgba(254, 93, 20, 0.4)",
+                "glow": "4px 4px 15px rgba(31, 58, 101, 0.4)",
             },
             borderRadius: {
                 "20": "20px",

@@ -5,11 +5,11 @@
 
     <x-home.about-us/>
 
-    <x-home.services/>
+    <x-sections.services/>
 
     <x-home.projects/>
 
-    <x-home.counter/>
+    <x-sections.counter/>
 
     <x-home.testimonials/>
 

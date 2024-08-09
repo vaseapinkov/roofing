@@ -12,10 +12,10 @@ $projects = \App\Models\Project::where('show_on_home_page', true)->get();
         <div class="flex flex-col gap-y-8">
 
             @foreach($projects as $project)
-                <div class="z-10 relative group flex items-center justify-between py-[10px] px-[50px] hover:bg-gray-light transition-all duration-300 ease-in bg-secondary-400 rounded-10 min-h-[180px]">
+                <div class="z-10 relative group flex items-center justify-between py-[10px] px-[50px] hover:bg-gray-light transition-all duration-300 ease-in bg-primary-500 rounded-10 min-h-[180px]">
                     <div class="font-heading w-[50%] overflow-hidden">
                         <div class="group-hover:-mt-[50%] group-hover:opacity-0 transition-all duration-500 ease-in">
-                            <p class="text-primary-500 text-lg mb-2">{{$project->sub_title}}</p>
+                            <p class="text-secondary text-lg mb-2">{{$project->sub_title}}</p>
                             <h4 class="text-white font-bold text-2xl">{{$project->name}}</h4>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 <section>
     <div class="" style="background-image:url({{Vite::asset('resources/images/newsletter_bg.jpg')}});">
-        <div class="bg-secondary/90 h-full w-full py-[90px]">
+        <div class="bg-primary-500/80 h-full w-full py-[90px]">
 
             <div class="container flex justify-between">
                 <x-section-title class="mb-0" alt-colors :centred="false" title="Need Roofing  Any Service" sub-title="Quality Roofing Contact Form"/>

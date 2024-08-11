@@ -2,7 +2,7 @@
     <x-home.hero/>
 
     @if(count($features))
-        <x-home.features :features="$features"/>
+        <x-home.features-v2 :features="$features"/>
     @endif
 
     <x-home.about-us/>

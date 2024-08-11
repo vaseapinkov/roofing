@@ -10,9 +10,10 @@ return new class extends Migration {
         Schema::create('features', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('icon');
             $table->text('home_page_description');
-            $table->string('home_page_icon');
-            $table->string('show_on_home_page');
+            $table->string('home_page_image');
+            $table->boolean('show_on_home_page');
             $table->timestamps();
         });
     }

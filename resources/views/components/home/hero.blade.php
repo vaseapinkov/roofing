@@ -1,31 +1,27 @@
-<section id="hero" class="relative ps-[20px] lg:ps-[240px] font-heading">
-
-    <div class="bg-primary-500 w-[45%] lg:w-[35%] xl:w-[22%] h-[calc(100vh-104px)] max-h-[870px] absolute top-0 left-0"></div>
-
-    <div class="relative z-10 rounded-bl-xl min-h-[440px] sm:min-h-[700px] lg:min-h-[400px] xl:min-h-[700px] flex items-center before:absolute before:w-full before:h-full before:bg-gradient-to-r before:from-black/50 before:via-transparent before:to-transparent before:rounded-bl-xl"
-         style="background-image: url({{Vite::asset('resources/images/hero.jpg')}})">
-        <div class="max-w-4xl flex flex-col gap-12 px-5 py-16 lg:px-28 lg:py-28 z-10 text-center lg:text-start">
+<section id="hero" class="relative bg-cover bg-center min-h-[948px] flex items-center justify-center" style="background-image: url({{Vite::asset('resources/images/hero.jpg')}})">
+    <div class="absolute top-0 left-0 right-0 bg-hero-gradient h-full w-full"></div>
+    <div class="font-heading relative flex items-center justify-center">
+        <div class="max-w-4xl flex flex-col gap-12 text-center items-center">
             <x-text size="h1" color="white" tag="h1">Best Roofing Services and Consulting</x-text>
 
-            <p class="text-white text-[20px]">
-                Welcome to M&R Roofing Company, your trusted partner in ensuring the safety, comfort, and beauty of your home
-            </p>
-            <x-button href="#services" type="primary" icon="arrow-right" class="w-fit mx-auto lg:mx-0">
-                Our Services
-            </x-button>
-        </div>
-    </div>
-
-    <div class="w-full ps-[55%] lg:ps-[22%]">
-        <div class="swiper w-full h-[100px] sm:h-[167px] lg:h-[100px] xl:h-[167px]" id="home-swiper">
-            <div class="swiper-wrapper">
-                @foreach(range(1, 6) as $index)
-                    <div class="swiper-slide 2xl:py-10 h-[47px] flex content-center">
-                        <img class="max-h-[47px] grayscale hover:grayscale-0 cursor-pointer" src="{{Vite::asset("resources/images/brands-slider/brand_img0$index.png")}}" alt="Partner Logo">
-                    </div>
-                @endforeach
+            <div class="space-y-6">
+                <p class="text-white text-[20px]">
+                    Welcome to M&R Roofing Company, your trusted partner in ensuring the safety, comfort, and beauty of your home
+                </p>
+                <x-button href="#services" type="primary" icon="arrow-right" class="w-fit mx-auto">
+                    Our Services
+                </x-button>
             </div>
+
         </div>
     </div>
 
 </section>
+
+{{--
+Features:
+1. Warranty 10 years
+2. 0 Interset
+3. https://www.google.com/search?q=M%26R+roofing&client=firefox-b-d&sca_esv=f2c31ff271fb88b6&ei=Rsy3Zo22AqvOwPAPrOGJqAE&ved=0ahUKEwiN8d7FoOuHAxUrJxAIHaxwAhUQ4dUDCBA&uact=5&oq=M%26R+roofing&gs_lp=Egxnd3Mtd2l6LXNlcnAiC00mUiByb29maW5nMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeSMIXUIYFWKAUcAF4AZABAJgB4QGgAZUKqgEFMC43LjG4AQPIAQD4AQGYAgmgAsYKwgIKEAAYsAMY1gQYR8ICDRAAGIAEGLADGEMYigXCAg4QABiwAxjkAhjWBNgBAcICGRAuGIAEGLADGNEDGEMYxwEYyAMYigXYAQLCAhkQLhiABBiwAxhDGMcBGMgDGIoFGK8B2AECwgILEAAYgAQYkQIYigXCAgoQABiABBhDGIoFwgILEC4YgAQYxwEYrwGYAwCIBgGQBhO6BgYIARABGAm6BgYIAhABGAiSBwUxLjcuMaAHtjs&sclient=gws-wiz-serp#lpg=cid:CgIgAQ%3D%3D,ik:CAoSLEFGMVFpcFB3dXRrbkJERDFLSW84bzFhcHpBdHA0ZmVwTUF2aEFPVVAzdXFJ
+
+--}}

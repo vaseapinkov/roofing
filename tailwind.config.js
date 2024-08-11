@@ -43,6 +43,9 @@ export default {
                 "gray-body": "#61657E",
                 "gray-title": "#1C1C1C",
             },
+            backgroundImage: {
+                'hero-gradient': 'linear-gradient(180deg, rgba(12, 18, 57, 0.27) 0%, #0C1239 100%)',
+            },
             boxShadow: {
                 "3xl": "4px 4px 20px rgba(0, 0, 0, 0.1)",
                 "card": "0px 0px 36px rgba(0, 0, 0, 0.08)",

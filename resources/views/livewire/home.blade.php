@@ -21,6 +21,7 @@
 
     <x-sections.counter/>
 
-    <x-sections.book-appointment/>
+    <x-home.contact-us/>
+
 </div>
 

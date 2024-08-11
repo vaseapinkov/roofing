@@ -1,4 +1,5 @@
-<header class="absolute top-0 left-0 right-0 text-gray-title w-full h-[104px] flex justify-between items-center container mx-auto z-20">
+<header class="absolute top-7 left-0 right-0 bg-white/75 rounded-5 shadow-2xl text-gray-title w-full flex justify-between items-center container mx-auto z-20">
+
     <a href="{{route('home')}}">
         <img src="{{Vite::asset('resources/images/logo.svg')}}" alt="Logo" width="150" class="w-[130px] 2xl:w-[150px] h-auto">
     </a>
@@ -22,29 +23,6 @@
             'name' => "Contact Us",
             'link' => route('contact-us'),
         ],
-//        [
-//            'name' => 'Home',
-//            'link' => route('home'),
-//        ],
-//        [
-//            'name' => 'Services',
-//            'options' => [
-//                ['name' => 'All Services', 'link' => route('services')],
-//                ...\App\Models\Service::all(),
-//            ]
-//        ],
-//        [
-//            'name' => 'Projects',
-//            'options' => \App\Models\Project::all()
-//        ],
-//        [
-//            'name' => 'About Us',
-//            'link' => route('home')
-//        ],
-//        [
-//            'name' => 'Contact',
-//            'link' => route('contact-us')
-//        ],
     ];
 
     ?>
@@ -55,7 +33,7 @@
                     {{$navItem['name']}}
                 </x-layout.header-dropdown>
             @else
-                <a class="py-10 px-5 font-bold hover:text-secondary text-gray-title" href="{{$navItem['link']}}">
+                <a class="py-8 px-5 font-bold hover:text-secondary text-gray-title" href="{{$navItem['link']}}">
                     {{$navItem['name']}}
                 </a>
             @endif

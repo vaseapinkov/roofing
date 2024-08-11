@@ -1,6 +1,6 @@
 @props(['options'])
 
-<div class="flex justify-center py-8 px-5 font-bold">
+<div class="flex justify-center border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 bg-white">
     <div
         x-data="{
             open: false,
@@ -51,7 +51,7 @@
             x-on:click.outside="close($refs.button)"
             :id="$id('dropdown-button')"
             style="display: none;"
-            class="absolute -left-8 mt-10 w-52 rounded-b-10 bg-white shadow-md"
+            class="absolute -left-8 mt-8 w-52 rounded-b-10 bg-white shadow-md"
         >
             @foreach($options as $option)
                 <a href="{{$option[$optionUrlKey]}}" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-8 py-4 text-left text-sm hover:text-secondary text-gray-title hover:bg-gray-50 disabled:text-gray-500 transition-all duration-300">

@@ -22,11 +22,11 @@
 
     <title>{{ $title ?? 'Page Title' }}</title>
 </head>
-<body class="relative font-body">
+<body class="relative font-body bg-primary-500">
 
 <x-layout.header/>
 
-<main class="pt-[104px]">
+<main class="bg-white">
     {{ $slot }}
 </main>
 

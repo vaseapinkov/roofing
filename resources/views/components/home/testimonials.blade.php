@@ -20,7 +20,7 @@
                     <div class="swiper-slide">
                         <div class="pr-8 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-16 items-center">
                             <div>
-                                <img class="max-w-full rounded-10 mx-auto" src="{{asset('storage/' . $testimonial->project_photo)}}" alt="Testimonial">
+                                <img class="max-w-full lg:max-h-[503px] rounded-10 mx-auto" src="{{asset('storage/' . $testimonial->project_photo)}}" alt="Testimonial">
                             </div>
 
                             <div>

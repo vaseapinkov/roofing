@@ -1,13 +1,14 @@
-@foreach( as )
+@props(['features'])
 
-@endforeach
 <section>
 
     <div class="grid grid-cols-3">
 
-        <div>
+        @foreach($features as $feature)
+            <div class="">
 
-        </div>
+            </div>
+        @endforeach
 
     </div>
 

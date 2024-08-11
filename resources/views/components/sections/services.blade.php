@@ -14,7 +14,7 @@
                     <div class="py-[50px] px-[45px]">
                         <div class="lg:group-hover:-mt-[50%] lg:group-hover:opacity-0 transition-all duration-500 ease-in">
                             <div class="bg-primary-500 size-24 p-4 rounded-full flex items-center justify-center mb-[55px] shadow-glow">
-                                <img class="w-full max-w-[40px] h-auto" src="{{asset('storage/' .$service->home_page_icon)}}" alt="Icon: {{$service->name}}">
+                                <img class="w-full max-w-[40px] h-auto" src="{{asset('storage/' .$service->icon)}}" alt="Icon: {{$service->name}}">
                             </div>
 
                             <h4 class="lg:group-hover:h-5 text-2xl font-heading font-medium">{{$service->name}}</h4>

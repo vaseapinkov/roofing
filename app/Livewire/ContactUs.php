@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class ContactUs extends Component
 {
-    public $firs_name;
+    public $first_name;
     public $last_name;
     public $email;
     public $phone;
@@ -16,13 +16,14 @@ class ContactUs extends Component
 
     public function render()
     {
-        return view('livewire.contact-us');
+        return view('livewire.contact-us')
+            ->title('M&R Roofing | A better roofing experience');
     }
 
-    public function saveMessage()
+    public function saveMessage(): void
     {
         VisitorMessage::create([
-            'firs_name' => $this->firs_name,
+            'first_name' => $this->first_name,
             'last_name' => $this->last_name,
             'email' => $this->email,
             'phone' => $this->phone,

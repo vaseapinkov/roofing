@@ -15,7 +15,7 @@ class VisitorMessageFactory extends Factory
         return [
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
-            'firs_name' => $this->faker->name(),
+            'first_name' => $this->faker->name(),
             'last_name' => $this->faker->lastName(),
             'email' => $this->faker->email(),
             'phone' => $this->faker->phoneNumber(),

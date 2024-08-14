@@ -1,7 +1,7 @@
-<header class="absolute top-7 left-0 right-0 bg-white/75 rounded-5 shadow-2xl text-gray-title w-full flex justify-between items-center container mx-auto z-20">
+<header class="absolute top-0 xl:top-7 left-0 right-0 py-5 xl:py-0 bg-white xl:bg-white/75 rounded-none xl:rounded-5 shadow-2xl text-gray-title w-full flex justify-between items-center container mx-auto z-20">
 
     <a href="{{route('home')}}">
-        <img src="{{Vite::asset('resources/images/logo.svg')}}" alt="Logo" width="150" class="w-[130px] 2xl:w-[150px] h-auto">
+        <img src="{{Vite::asset('resources/images/logo.svg')}}" alt="Logo" width="150" class="w-[100px] xl:w-[130px] 2xl:w-[150px] h-auto">
     </a>
 
 
@@ -9,15 +9,15 @@
     $navItems = [
         [
             'name' => "About Us",
-            'link' => "#about-us",
+            'link' => route('home')."#about-us",
         ],
         [
             'name' => "Services",
-            'link' => "#services",
+            'link' => route('home')."#services",
         ],
         [
             'name' => "Reviews",
-            'link' => "#reviews",
+            'link' => route('home')."#reviews",
         ],
         [
             'name' => "Contact Us",

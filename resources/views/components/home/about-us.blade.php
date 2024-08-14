@@ -33,11 +33,11 @@ $features = [
                 <img class="hidden sm:block lg:hidden xl:block rounded-10 ml-5" src="{{Vite::asset('resources/images/about-us/img-2.jpg')}}" alt="About Us 2">
 
                 <div class="hidden lg:block">
-                    <div class="absolute bg-white shadow-3xl p-5 flex items-center gap-5 rounded-10 left-[70px] bottom-[87px] w-[352px]">
+                    <div class="absolute bg-white shadow-3xl p-5 flex items-center gap-5 rounded-10 left-[70px] bottom-[87px] w-[400px]">
                         <div class="bg-primary-500 rounded-5 h-[63px] w-[63px] flex items-center justify-center">
                             <img src="{{Vite::asset('resources/images/about-us/icon-1.svg')}}" alt="Icon">
                         </div>
-                        <p class="flex-1 font-medium font-heading text-gray-title">We have more than 43 years of experience</p>
+                        <p class="flex-1 font-medium font-heading text-gray-title">Our experts have more than 4 decades of combined experience</p>
                     </div>
 
                     <div class="absolute bg-white shadow-3xl p-5 flex items-center gap-5 rounded-10 left-[145px] bottom-[-38px] w-[352px]">
@@ -45,7 +45,7 @@ $features = [
                             <img src="{{Vite::asset('resources/images/about-us/icon-2.svg')}}" alt="Icon">
                         </div>
 {{--TODO: Change icon--}}
-                        <p class="flex-1 font-medium font-heading text-gray-title">We work with certified high quality material</p>
+                        <p class="flex-1 font-medium font-heading text-gray-title">We work with most respected manufactures</p>
                     </div>
                 </div>
             </div>

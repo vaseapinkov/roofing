@@ -36,7 +36,7 @@ class VisitorMessageResource extends Resource
                     ->label('Last Modified Date')
                     ->content(fn(?VisitorMessage $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
 
-                TextInput::make('firs_name')
+                TextInput::make('first_name')
                     ->required(),
 
                 TextInput::make('last_name')
@@ -53,6 +53,9 @@ class VisitorMessageResource extends Resource
 
                 TextInput::make('message')
                     ->required(),
+
+                TextInput::make('address')
+                    ->required(),
             ]);
     }
 
@@ -60,7 +63,7 @@ class VisitorMessageResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('firs_name'),
+                TextColumn::make('first_name'),
 
                 TextColumn::make('last_name'),
 
@@ -68,11 +71,11 @@ class VisitorMessageResource extends Resource
 
                 TextColumn::make('email'),
             ])
+            ->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ])
             ->actions([
-                EditAction::make(),
                 DeleteAction::make(),
                 ViewAction::make(),
             ])

@@ -19,21 +19,9 @@ class DatabaseSeeder extends Seeder
     {
         $services = [
             [
-                'name' => 'Roof replacement/ reparation paid by insurance company',
-                'home_page_description' => 'M&R Roofing Company simplifies roof damage insurance claims. Our team guides homeowners through understanding policies, filing paperwork, and communicating with insurers to maximize benefits. Once approved, we promptly handle repairs or replacements with quality materials. Trust us to protect your home and make the insurance process smooth and stress-free.',
-                'icon' => '../images/services-1.svg',
-                'show_on_home_page' => true,
-            ],
-            [
                 'name' => 'Roof repair',
                 'home_page_description' => 'M&R Roofing Company understands that a damaged roof risks your home and family. Our skilled team offers exceptional repair services, from minor leaks to severe storm damage, using top-quality materials and advanced techniques. Trust us to restore your roof and provide peace of mind with reliable, efficient service.',
                 'icon' => '../images/services-2.svg',
-                'show_on_home_page' => true,
-            ],
-            [
-                'name' => 'Roof renovation',
-                'home_page_description' => 'Elevate your home’s aesthetic and functionality with M&R Roofing Company’s expert renovation services. Our team offers a variety of roofing styles and materials to enhance curb appeal and energy efficiency. Let us transform your roof into a stunning, protective statement piece that adds value and beauty to your home.',
-                'icon' => '../images/services-3.svg',
                 'show_on_home_page' => true,
             ],
             [
@@ -49,19 +37,13 @@ class DatabaseSeeder extends Seeder
                 'show_on_home_page' => true,
             ],
             [
-                'name' => 'Siding replacement',
-                'home_page_description' => 'Is your siding aging or damaged? It might be time for a replacement. M&R Roofing Company offers top-notch siding solutions that enhance your home’s beauty, energy efficiency, and value. Our expert team will help you choose from a variety of materials and styles. With our exceptional craftsmanship, your new siding will last and transform your home’s appearance. Upgrade with us today for a stylish, protective upgrade.',
-                'icon' => '../images/services-6.svg',
-                'show_on_home_page' => true,
-            ],
-            [
                 'name' => 'Windows replacement',
                 'home_page_description' => 'M&R Roofing Company offers expert window replacement services to enhance your home’s energy efficiency, security, and aesthetic appeal. If your windows are outdated or damaged, our team will help you choose from a range of styles and energy-efficient options. We ensure meticulous installation and superior craftsmanship for lasting results. Upgrade your home with us for improved comfort, style, and reduced energy bills.',
                 'icon' => '../images/services-7.svg',
                 'show_on_home_page' => true,
             ],
             [
-                'name' => 'Same day repair',
+                'name' => 'Same day/Next Day repair',
                 'home_page_description' => 'When emergencies strike, M&R Roofing Company offers fast, same-day repair services for urgent issues. Our skilled technicians handle roof leaks, siding damage, and window problems promptly, with the right tools and expertise. We prioritize quick, professional repairs to restore your home’s safety and comfort with minimal disruption. Contact us for immediate, reliable assistance.',
                 'icon' => '../images/services-8.svg',
                 'show_on_home_page' => true,
@@ -120,9 +102,9 @@ class DatabaseSeeder extends Seeder
 
         $features = [
             [
-                'name' => '10 Years Warranty',
+                'name' => '50 Years Warranty',
                 'icon' => 'images/feature-icon-1.svg',
-                'home_page_description' => 'Get 10 Years warranty on our services and 50 Years warranty on materials.',
+                'home_page_description' => 'Get a 50 year non-prorated manufacturers warranty and a 10 year warranty on workmanship',
                 'home_page_image' => '../images/feature-1.jpg',
                 'show_on_home_page' => true,
             ],
@@ -136,7 +118,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Preferred contractor',
                 'icon' => 'images/feature-icon-3.svg',
-                'home_page_description' => 'M&R Roofing has been approved to be preferred contractor int the Owns Corning Roofing Contractors Network of Independent Contractors.',
+                'home_page_description' => 'We are manufacturer certified installers with the most respected manufacturers in the industry. GAF, Owens Corning, and James Hardie have all placed their trust in us and you should too!',
                 'home_page_image' => '../images/feature-3.jpg',
                 'show_on_home_page' => true,
             ],
@@ -147,7 +129,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@mrroofingllc.com',
-            'password' => Hash::make('password'),
+            'password' => Hash::make('t}=R+)^2LMpD'),
         ]);
     }
 }

@@ -37,7 +37,7 @@
                 </div>
             @endforeach
 
-            @if(count($services) === 8)
+            @if(count($services) === 5)
                 <div class="hidden xl:flex min-h-[100px] bg-primary-500 rounded-5 items-center justify-center">
                     <a class="flex relative group/link gap-2 items-center text-lg rounded-full px-4 py-1 w-fit" href="#book-appointment">
                         <div class="bg-secondary absolute top-0 left-0 h-12 w-12 group-hover/link:w-full transition-all duration-500 ease-out z-0 rounded-full"></div>

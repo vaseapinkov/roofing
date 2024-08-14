@@ -9,7 +9,7 @@ return new class extends Migration {
     {
         Schema::create('visitor_messages', function (Blueprint $table) {
             $table->id();
-            $table->string('firs_name');
+            $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
             $table->string('phone');

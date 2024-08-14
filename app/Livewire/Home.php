@@ -19,8 +19,6 @@ class Home extends Component
     public $phone;
     public $message;
     public $address;
-    public $city;
-    public $state;
 
     public function render(): View
     {
@@ -37,19 +35,21 @@ class Home extends Component
         ])->title('M&R Roofing | A better roofing experience');
     }
 
-    public function saveMessage()
+    public function saveMessage(): void
     {
 
         VisitorMessage::create([
-            'first_name' => $this->first_name,
-            'last_name' => $this->last_name,
+            'first_name' => $this->first_name === null ?  '-' : $this->first_name,
+            'last_name' => $this->last_name === null ?  '-' : $this->last_name,
             'email' => $this->email,
             'phone' => $this->phone,
-            'message' => $this->message,
-            'address' => $this->address,
-            'city' => $this->city,
-            'state' => $this->state,
+            'subject' => '-',
+            'message' => $this->message === null ?  '-' : $this->message,
+            'address' => $this->address === null ?  '-' : $this->address,
         ]);
+
+        $this->reset();
+        session()->flash('status', 'Thank you! Your message has been sent successfully.');
 
     }
 }

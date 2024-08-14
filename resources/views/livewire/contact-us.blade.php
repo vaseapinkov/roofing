@@ -10,7 +10,7 @@
 
                 <form wire:submit.prevent="saveMessage">
                     <div class="mt-12 grid grid-cols-2 gap-x-6 gap-y-4">
-                        <input wire:model="firs_name" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2 sm:col-span-1" type="text" placeholder="First Name*">
+                        <input wire:model="first_name" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2 sm:col-span-1" type="text" placeholder="First Name*">
                         <input wire:model="last_name" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2 sm:col-span-1" type="text" placeholder="Last Name*">
                         <input wire:model="email" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2 sm:col-span-1" type="text" placeholder="Email Address*">
                         <input wire:model="phone" class="border border-gray-light-alt rounded-5 text-gray-body text-sm px-4 py-4 col-span-2 sm:col-span-1" type="text" placeholder="Phone*">
@@ -61,8 +61,7 @@
                     </div>
                 </div>
 
-
-                <iframe class="w-full h-full rounded-10" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96811.54759587669!2d-74.01263924803828!3d406880494567041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f131!3m3!1m2!1s0x89c25bae694479a3%3A0xb9949385da52e69e!2sBarclays%20Center!5e0!3m2!1sen!2sbd!4v1636195194646!5m2!1sen!2sbd" allowfullscreen="" loading="lazy"></iframe>
+                <iframe class="w-full h-full rounded-10" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3046.5926984804687!2d-74.74084012327239!3d40.21812227147221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c159ff0021a5d9%3A0xb0d2b508b72d51b9!2sM%26R%20Roofing!5e0!3m2!1sen!2s!4v1723652667318!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
             </div>
 
         </div>

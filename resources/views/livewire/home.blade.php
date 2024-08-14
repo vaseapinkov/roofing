@@ -7,9 +7,13 @@
 
     <x-home.about-us/>
 
+    <x-sections.counter/>
+
     @if(count($services))
         <x-sections.services :services="$services"/>
     @endif
+
+    <x-home.contact-us/>
 
     @if(count($projects))
         <x-home.projects :projects="$projects"/>
@@ -19,9 +23,7 @@
         <x-home.testimonials :testimonials="$testimonials"/>
     @endif
 
-    <x-sections.counter/>
-
-    <x-home.contact-us/>
+    <x-sections.book-appointment/>
 
 </div>
 

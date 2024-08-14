@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Mail\VisitorMessageCreatedMail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Mail;
 
 class VisitorMessage extends Model
 {
@@ -17,4 +19,13 @@ class VisitorMessage extends Model
         'subject',
         'message',
     ];
+
+    protected static function boot(): void
+    {
+        parent::boot();
+
+        static::created(function ($visitorMessage) {
+            Mail::to('wasea.pinkov@gmail.com')->send(new VisitorMessageCreatedMail($visitorMessage));
+        });
+    }
 }

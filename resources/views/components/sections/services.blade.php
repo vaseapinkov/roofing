@@ -23,15 +23,15 @@
                         <div class="absolute hidden lg:group-hover:flex flex-col transition-all duration-500 ease-in text-white h-[calc(100%-100px)]">
                             <h4 class="text-2xl font-heading font-medium mb-4">{{$service->name}}</h4>
                             <p class="mb-4">{{$service->home_page_description}}</p>
-                            {{-- TODO: Uncomment when dedicated page ready --}}
-                            {{--
-                                                        <a class="flex relative group/link gap-2 items-center text-lg rounded-full px-4 py-1 w-fit mt-auto" href="#">
-                                                            <div class="bg-black absolute top-0 left-0 h-9 w-9 group-hover/link:w-full transition-all duration-500 ease-out z-0 rounded-full"></div>
 
-                                                            <p class="z-10">Read More</p>
-                                                            <x-arrow-right stroke-width="4" class="size-4 z-10"/>
-                                                        </a>
-                                                        --}}
+
+                            <a class="flex relative group/link gap-2 items-center text-lg rounded-full px-4 py-1 w-fit mt-auto" href="{{route('services.show', $service)}}">
+                                <div class="bg-black absolute top-0 left-0 h-9 w-9 group-hover/link:w-full transition-all duration-500 ease-out z-0 rounded-full"></div>
+
+                                <p class="z-10">Read More</p>
+                                <x-arrow-right stroke-width="4" class="size-4 z-10"/>
+                            </a>
+
                         </div>
                     </div>
                 </div>

@@ -21,3 +21,33 @@
         @apply !text-end
     }
 }
+
+#post {
+    img {
+        @apply rounded-5;
+    }
+
+    figcaption {
+        @apply hidden;
+    }
+
+    h2 {
+        @apply text-2xl font-semibold font-heading text-gray-title mt-8 mb-4;
+    }
+
+    p {
+        @apply font-body text-gray-body;
+    }
+
+    ul {
+        @apply py-4 list-image-[url(https://roofing.test/images/list-checkbox.png)];
+    }
+
+    li {
+        @apply font-body text-gray-title py-1 list-disc list-inside;
+    }
+
+    li::marker {
+        @apply text-[22px];
+    }
+}

@@ -7,6 +7,8 @@ use App\Models\Service;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -33,30 +35,32 @@ class ServiceResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->columns(1)
-            ->extraAttributes(['class' => 'max-w-xl'])
             ->schema([
-                Placeholder::make('created_at')
-                    ->label('Created Date')
-                    ->hiddenOn('create')
-                    ->content(fn(?Service $record): string => $record?->created_at?->diffForHumans() ?? '-'),
+                Section::make('General')
+                    ->schema([
+                        TextInput::make('name')
+                            ->required(),
+                    ]),
+                Section::make('Home Page')
+                    ->schema([
+                        Textarea::make('home_page_description')
+                            ->label('Description')
+                            ->required(),
 
-                Placeholder::make('updated_at')
-                    ->label('Last Modified Date')
-                    ->hiddenOn('create')
-                    ->content(fn(?Service $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
+                        FileUpload::make('icon')
+                            ->label('Icon')
+                            ->imagePreviewHeight(100)
+                            ->required(),
 
-                TextInput::make('name')
-                    ->required(),
-
-                Textarea::make('home_page_description')
-                    ->required(),
-
-                FileUpload::make('home_page_icon')
-                    ->imagePreviewHeight(100)
-                    ->required(),
-
-                Checkbox::make('show_on_home_page'),
+                        Checkbox::make('show_on_home_page'),
+                    ]),
+                Section::make('Details Page')
+                    ->schema([
+                        RichEditor::make('details')
+                            ->fileAttachmentsDirectory('service-details')
+                            ->label('Content')
+                            ->required(),
+                    ]),
             ]);
     }
 

@@ -12,6 +12,7 @@ $paddings = match ($size) {
 };
 
 $classes = match ($type) {
+    'alt' => "bg-primary-100 hover:bg-primary-500 font-heading text-primary-500 hover:text-white text-lg rounded $paddings",
     'secondary' => "bg-secondary hover:bg-secondary-600 font-heading text-white text-lg rounded $paddings",
     default => "bg-primary-500 hover:bg-secondary font-heading text-white text-lg rounded $paddings",
 };

@@ -23,8 +23,12 @@
     <title>{{ $title ?? 'Page Title' }}</title>
 </head>
 <body class="relative font-body bg-primary-500">
+@if(Route::current()->getName() === 'home')
+    <x-layout.header/>
+@else
+    <x-layout.header-v2/>
+@endif
 
-<x-layout.header/>
 
 <main class="bg-white">
     {{ $slot }}

@@ -25,7 +25,7 @@ class VisitorMessage extends Model
         parent::boot();
 
         static::created(function ($visitorMessage) {
-            Mail::to('wasea.pinkov@gmail.com')->send(new VisitorMessageCreatedMail($visitorMessage));
+            Mail::to(config('mail.to'))->send(new VisitorMessageCreatedMail($visitorMessage));
         });
     }
 }

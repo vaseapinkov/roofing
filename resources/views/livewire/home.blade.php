@@ -5,6 +5,8 @@
         <x-home.features-v2 :features="$features"/>
     @endif
 
+    <x-home.insurance/>
+
     <x-home.about-us/>
 
     <x-sections.counter/>

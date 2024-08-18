@@ -3,15 +3,15 @@
 
     <x-section-bradcrumbs :title="$service->name"/>
 
-    <div class="container py-[120px] grid grid-cols-12">
+    <div class="container py-[120px] grid grid-cols-12 gap-8">
 
-        <div id="post" class="col-span-8">
+        <div id="post" class="col-span-12 xl:col-span-8">
             <div>
                 {!! $service->details !!}
             </div>
         </div>
 
-        <div class="col-span-4 space-y-12">
+        <div class="col-span-12 xl:col-span-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-1 gap-12">
 
             <div class="bg-white shadow-card rounded-10 py-8 px-8">
                 <h4 class="text-2xl font-semibold font-heading text-gray-title">

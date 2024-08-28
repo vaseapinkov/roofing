@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\FeatureResource\Pages;
+namespace App\Filament\Resources\SettingsResource\Pages;
 
-use App\Filament\Resources\FeatureResource;
+use App\Filament\Resources\SettingsResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditFeature extends EditRecord
+class EditSettings extends EditRecord
 {
-    protected static string $resource = FeatureResource::class;
+    protected static string $resource = SettingsResource::class;
 
     protected function getHeaderActions(): array
     {

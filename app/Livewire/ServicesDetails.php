@@ -19,6 +19,6 @@ class ServicesDetails extends Component
 
     public function render(): View
     {
-        return view('livewire.services-details');
+        return view('livewire.services-details')->layoutData(['navigationType' => 'default']);
     }
 }

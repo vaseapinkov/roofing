@@ -15,7 +15,7 @@ class Services extends Component
 
         return view('livewire.services', [
             'services' => $services,
-        ]);
+        ])->layoutData(['navigationType' => 'default']);
     }
 
     public function saveMessage(): void

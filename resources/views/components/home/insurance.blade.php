@@ -2,10 +2,10 @@
 
     <div class="flex items-center">
         <div class="w-[47%] flex flex-col gap-6 col-span-5 pr-6">
-            <div class="relative bg-primary-500 rounded-5 rounded-tr-[50px] py-10 px-9 text-white font-heading">
-                <h1 class="text-5xl font-bold">Express</h1>
-                <h2 class="text-4xl font-semibold">Assessments</h2>
-                <img class="absolute top-4 left-4" src="{{Vite::asset('resources/images/insurance/globe.svg')}}" alt="Icon">
+            <div class="relative bg-primary-500 rounded-5 rounded-tr-[50px] py-10 px-7 text-white font-heading">
+                <h1 class="text-5xl font-bold">ZERO</h1>
+                <h2 class="text-4xl font-semibold">Interest Rate</h2>
+                <span class="absolute text-6xl font-extrabold text-white/60 font-body top-4 left-4">0%</span>
             </div>
 
             <img class="rounded-5" src="{{Vite::asset('resources/images/insurance/photo-2.jpg')}}" alt="Photo Roofer Working">

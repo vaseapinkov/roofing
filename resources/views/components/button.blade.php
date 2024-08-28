@@ -19,7 +19,7 @@ $classes = match ($type) {
 ?>
 
 @if($href)
-    <a href="{{$href}}" {{$attributes->merge(['class' => "$classes flex items-center gap-4 leading-none"])}}>
+    <a href="{{$href}}" {{$attributes->merge(['class' => "$classes flex items-center gap-4 leading-none transition duration-300"])}}>
         {{ $slot }}
 
         @if($icon === 'arrow-right')

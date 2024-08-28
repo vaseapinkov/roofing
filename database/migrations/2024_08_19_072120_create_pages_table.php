@@ -7,19 +7,21 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('features', function (Blueprint $table) {
+        Schema::create('pages', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('icon');
-            $table->text('home_page_description');
-            $table->string('home_page_image');
-            $table->boolean('show_on_home_page');
+
+            $table->string('title');
+            $table->string('slug');
+            $table->string('navigation_type');
+            $table->json('content');
+
+
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('features');
+        Schema::dropIfExists('pages');
     }
 };

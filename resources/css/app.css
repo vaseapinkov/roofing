@@ -22,7 +22,7 @@
     }
 }
 
-#post {
+.content {
     img {
         @apply rounded-5;
     }

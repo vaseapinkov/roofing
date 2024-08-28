@@ -15,6 +15,7 @@ class Service extends Model
         'name',
         'icon',
         'home_page_description',
+        'home_page_image',
         'show_on_home_page',
         'details',
     ];

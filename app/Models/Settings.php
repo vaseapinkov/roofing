@@ -25,5 +25,14 @@ class Settings extends Model
         'scripts_head',
         'scripts_body',
         'css_head',
+        'instagram_posts',
+        'navbar_links',
+        'nav_cta_text',
+        'nav_cta_link',
+    ];
+
+    protected $casts = [
+        'instagram_posts' => 'json',
+        'navbar_links' => 'json',
     ];
 }

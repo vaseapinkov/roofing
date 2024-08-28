@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,22 +49,32 @@
     @endenv
 
 
-    <title>{{ $title ?? 'Page Title' }}</title>
+    <title>{{ $title . ' | ' . $settings->website_name}}</title>
 </head>
+
 <body class="relative font-body bg-primary-500">
 
 @if($navigationType === 'floating')
-    <x-layout.header-floating/>
+    <x-layout.header-floating :logo="$settings->logo_header" :cta-text="$settings->nav_cta_text" :cta-link="$settings->nav_cta_link" :nav-links="$settings->navbar_links"/>
 @elseif($navigationType === 'default')
-    <x-layout.header/>
+    <x-layout.header-floating :logo="$settings->logo_header" :cta-text="$settings->nav_cta_text" :cta-link="$settings->nav_cta_link" :nav-links="$settings->navbar_links"/>
 @endif
 
 <main class="bg-white">
     {{ $slot }}
 </main>
 
-<x-layout.footer/>
+<x-layout.footer
+    :about-us="$settings->about_us"
+    :logo="$settings->logo_footer"
+    :instagram-link="$settings->instagram_link"
+    :facebook-link="$settings->facebook_link"
+    :youtube-link="$settings->youtube_link"
+    :logo="$settings->logo_footer"
+    :instagram-posts="$settings->instagram_posts"
+    :phone="$settings->phone" />
 
 @vite('resources/js/app.js')
+
 </body>
 </html>

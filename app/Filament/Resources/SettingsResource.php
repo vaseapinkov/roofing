@@ -2,10 +2,12 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\Sections\SectionCta;
 use App\Filament\Resources\SettingsResource\Pages;
 use App\Models\Settings;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -31,68 +33,128 @@ class SettingsResource extends Resource
         return $form
             ->schema([
                 Section::make('General')
+                    ->collapsible()
+                    ->collapsed()
                     ->columns(1)
                     ->schema([
                         TextInput::make('website_name')
-                            ->hint('Will be prepended to all pages meta title')
+                            ->hint('Will be prepended to all pages meta titles')
                             ->required(),
 
                         Textarea::make('about_us')
                             ->hint('Text displayed in the footer of the website')
                             ->rows(4)
                             ->required(),
+                    ]),
 
+                Section::make('Navbar')
+                    ->collapsible()
+                    ->collapsed()
+                    ->columns(2)
+                    ->schema([
+                        TextInput::make('nav_cta_text')
+                            ->required(),
+                        TextInput::make('nav_cta_link')
+                            ->required(),
+                        Repeater::make('navbar_links')
+                            ->columnSpan(2)
+                            ->maxItems(7)
+                            ->minItems(3)
+                            ->grid(3)
+                            ->reorderableWithDragAndDrop()
+                            ->collapsible()
+                            ->cloneable()
+                            ->itemLabel(fn (array $state): ?string => $state['label'] ?? null)
+                            ->schema([
+                                TextInput::make('label')
+                                    ->required(),
+                                TextInput::make('link')
+                                    ->required(),
+                            ]),
                     ]),
 
                 Section::make('Logos')
+                    ->collapsible()
+                    ->collapsed()
                     ->columns(3)
                     ->schema([
-                    FileUpload::make('fav_icon')
-                        ->hint('260x260px')
-                        ->required(),
+                        FileUpload::make('fav_icon')
+                            ->hint('260x260px')
+                            ->required(),
 
-                    FileUpload::make('logo_header')
-                        ->hint('150x57px')
-                        ->required(),
+                        FileUpload::make('logo_header')
+                            ->hint('150x57px')
+                            ->required(),
 
-                    FileUpload::make('logo_footer')
-                        ->hint('150x57px')
-                        ->required(),
-                ]),
+                        FileUpload::make('logo_footer')
+                            ->hint('150x57px')
+                            ->required(),
+                    ]),
 
-                Section::make('Contacts')->schema([
-                    TextInput::make('phone')
-                        ->required(),
+                Section::make('Contacts')
+                    ->collapsible()
+                    ->collapsed()
+                    ->description('Basic Contact info + Google Maps iFrame Link')
+                    ->schema([
+                        TextInput::make('phone')
+                            ->required(),
 
-                    TextInput::make('address')
-                        ->required(),
+                        TextInput::make('address')
+                            ->required(),
 
-                    Textarea::make('g_maps_code')
-                        ->label('Google Maps iFrame Link')
-                        ->required(),
+                        TextInput::make('contact_email')
+                            ->label('Email')
+                            ->type('email')
+                            ->required(),
 
-                    TextInput::make('contact_email')
-                        ->label('Email')
-                        ->type('email')
-                        ->required(),
+                        Textarea::make('g_maps_code')
+                            ->label('Google Maps iFrame Link')
+                            ->required(),
+                    ]),
 
-                ]),
+                Section::make('Social Links')
+                    ->collapsible()
+                    ->collapsed()
+                    ->schema([
+                        TextInput::make('instagram_link')
+                            ->label('Instagram')
+                            ->required(),
 
-                Section::make('Social Links')->schema([
-                    TextInput::make('instagram_link')
-                        ->label('Instagram')
-                        ->required(),
+                        TextInput::make('facebook_link')
+                            ->label('Facebook')
+                            ->required(),
 
-                    TextInput::make('facebook_link')
-                        ->label('Facebook')
-                        ->required(),
+                        TextInput::make('youtube_link')
+                            ->label('YouTube')
+                            ->required(),
+                    ]),
 
-                    TextInput::make('youtube_link')
-                        ->label('YouTube')
-                        ->required(),
-                ]),
+                Section::make('Instagram Posts')
+                    ->collapsible()
+                    ->collapsed()
+                    ->description('List of 6 images shown at in the footer on all pages | Keep Images in a 1:1 aspect ratio, preferably 120x120px')
+                    ->schema([
+                        Repeater::make('instagram_posts')
+                            ->label('Posts')
+                            ->grid(2)
+                            ->reorderableWithDragAndDrop()
+                            ->collapsible()
+                            ->cloneable()
+                            ->maxItems(6)
+                            ->defaultItems(6)
+                            ->minItems(6)
+                            ->required()
+                            ->schema([
+                                TextInput::make('instagram_link'),
+                                FileUpload::make('image')
+                                    ->imageCropAspectRatio('1:1')
+                                    ->required(),
+                            ]),
+                    ]),
 
-                Section::make('Embeded Scripts')
+                Section::make('Embedded Scripts')
+                    ->collapsible()
+                    ->collapsed()
                     ->description('This scripts will load on every page, if you wish to add some code for a specific page check for a similar section in the page settings')
                     ->schema([
                         Textarea::make('scripts_head')

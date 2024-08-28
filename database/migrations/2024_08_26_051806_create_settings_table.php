@@ -19,8 +19,12 @@ return new class extends Migration {
             $table->string('instagram_link');
             $table->string('facebook_link');
             $table->string('youtube_link');
+            $table->json('instagram_posts');
             $table->text('about_us');
             $table->string('contact_email');
+            $table->json('navbar_links');
+            $table->string('nav_cta_text');
+            $table->string('nav_cta_link');
             $table->text('scripts_head');
             $table->text('scripts_body');
             $table->text('css_head');

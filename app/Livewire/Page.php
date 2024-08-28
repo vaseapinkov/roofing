@@ -8,20 +8,21 @@ use Livewire\Component;
 
 class Page extends Component
 {
-    public $page;
-    public $settings;
+    public \App\Models\Page $page;
+    public Settings $settings;
 
-    public function mount(\App\Models\Page $page): void
+    public function mount($page = null): void
     {
         $this->settings = Settings::first();
-        $this->page = $page;
+
+        $this->page = $page ?? \App\Models\Page::where('slug', 'home')->first();
     }
 
     public function render(): View
     {
         return view('livewire.page')
             ->layoutData([
-                'title' => $this->page->title,
+                'title' => $this->page->meta_title,
                 'settings' => $this->settings,
                 'navigationType' => $this->page->navigation_type,
             ]);

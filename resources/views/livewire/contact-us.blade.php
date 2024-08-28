@@ -1,6 +1,4 @@
 <div>
-    <x-section-bradcrumbs title="Contact Us"/>
-
     <section class="container py-[120px] bg-white">
 
         <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">

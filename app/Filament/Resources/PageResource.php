@@ -9,6 +9,7 @@ use App\Filament\Resources\PageBlocks\HeroSectionBlock;
 use App\Filament\Resources\PageBlocks\SimpleCardGridBlock;
 use App\Filament\Resources\PageBlocks\SimpleCardListBlock;
 use App\Filament\Resources\PageBlocks\TestimonialsSliderBlock;
+use App\Filament\Resources\PageBlocks\TextSectionBlock;
 use App\Filament\Resources\PageResource\Pages;
 use App\Models\Page;
 use Filament\Forms\Components\Builder;
@@ -40,6 +41,26 @@ class PageResource extends Resource
         return $form
             ->columns(2)
             ->schema([
+
+                Section::make('SEO')
+                    ->columnSpan(1)
+                    ->schema([
+                        TextInput::make('meta_title')
+                            ->required(),
+                        Textarea::make('meta_description')
+                            ->hint('Keep it under 160 characters')
+                            ->maxLength(255)
+                            ->rows(4)
+                            ->required(),
+                        FileUpload::make('meta_image')
+                            ->hint('1200x627')
+                            ->label('Meat Image')
+                            ->image()
+                            ->imageEditor()
+                            ->imageCropAspectRatio('1.91:1')
+                            ->required(),
+                    ]),
+
                 Section::make('General')
                     ->columnSpan(1)
                     ->schema([
@@ -54,29 +75,12 @@ class PageResource extends Resource
                                 'default' => 'Default',
                                 'floating' => 'Floating',
                             ])
-                            ->required()
-                            ->unique(Page::class, 'slug', fn($record) => $record),
-                    ]),
-                Section::make('SEO')
-                    ->columnSpan(1)
-                    ->schema([
-                        TextInput::make('meat_title')
-                            ->required()
-                            ->afterStateUpdated(fn($state, callable $set) => $set('slug', Str::slug($state))),
-                        Textarea::make('meta_description')
-                            ->hint('Keep it under 160 characters')
-                            ->maxLength(255)
-                            ->required()
-                            ->afterStateUpdated(fn($state, callable $set) => $set('slug', Str::slug($state))),
-                        FileUpload::make('meat_image')
-                            ->hint('1200x627')
-                            ->label('Meat Image')
-                            ->image()
-                            ->imageEditor()
-                            ->imageCropAspectRatio('1.91:1')
                             ->required(),
                     ]),
+
                 Builder::make('content')
+                    ->collapsible()
+                    ->collapsed()
                     ->columnSpan(2)
                     ->label('Sections')
                     ->blocks([
@@ -87,6 +91,7 @@ class PageResource extends Resource
                         SimpleCardGridBlock::block(),
                         TestimonialsSliderBlock::block(),
                         ContactFormBlock::block(),
+                        TextSectionBlock::block(),
                     ]),
             ]);
     }

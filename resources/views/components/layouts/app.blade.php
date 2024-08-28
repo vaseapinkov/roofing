@@ -49,7 +49,7 @@
     @endenv
 
 
-    <title>{{ $title . ' | ' . $settings->website_name}}</title>
+    <title>{{ $settings->website_name . ' | ' . $title}}</title>
 </head>
 
 <body class="relative font-body bg-primary-500">
@@ -57,7 +57,8 @@
 @if($navigationType === 'floating')
     <x-layout.header-floating :logo="$settings->logo_header" :cta-text="$settings->nav_cta_text" :cta-link="$settings->nav_cta_link" :nav-links="$settings->navbar_links"/>
 @elseif($navigationType === 'default')
-    <x-layout.header-floating :logo="$settings->logo_header" :cta-text="$settings->nav_cta_text" :cta-link="$settings->nav_cta_link" :nav-links="$settings->navbar_links"/>
+    <x-layout.header :logo="$settings->logo_header" :cta-text="$settings->nav_cta_text" :cta-link="$settings->nav_cta_link" :nav-links="$settings->navbar_links"/>
+    <x-section-bradcrumbs :title="$title"/>
 @endif
 
 <main class="bg-white">

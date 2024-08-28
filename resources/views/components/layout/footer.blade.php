@@ -87,8 +87,8 @@
             <p class="text-sm">© Copyright 2023. All Right Reserved</p>
 
             <div class="flex">
-                <p class="px-4 border-r border-gray-light">Privacy Policy</p>
-                <p class="px-4">Terms & Condition</p>
+                <a href="{{url('privacy-policy')}}" class="px-4 border-r border-gray-light">Privacy Policy</a>
+                <a href="{{url('terms-and-conditions')}}" class="px-4">Terms & Condition</a>
             </div>
         </div>
     </div>

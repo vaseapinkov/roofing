@@ -2,7 +2,9 @@
 
 namespace App\Livewire;
 
+use App\Models\Settings;
 use App\Models\VisitorMessage;
+use Illuminate\View\View;
 use Livewire\Component;
 
 class ContactUs extends Component
@@ -13,11 +15,21 @@ class ContactUs extends Component
     public $phone;
     public $subject;
     public $message;
+    public Settings $settings;
 
-    public function render()
+    public function mount(): void
+    {
+        $this->settings = Settings::first();
+    }
+
+    public function render(): View
     {
         return view('livewire.contact-us')
-            ->title('M&R Roofing | A better roofing experience');
+            ->layoutData([
+                'title' => "Contact Us",
+                'settings' => $this->settings,
+                'navigationType' => "default",
+            ]);
     }
 
     public function saveMessage(): void

@@ -71,6 +71,10 @@
                 :success-message="$content['data']['success_message']"
             />
 
+        @elseif($content['type'] === 'text_section')
+
+            <x-sections.text :content="$content['data']['content']"/>
+
         @endif
 
 

@@ -11,10 +11,12 @@ class Page extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
         'slug',
         'navigation_type',
         'content',
+        'meta_title',
+        'meta_description',
+        'meta_image',
     ];
 
     protected $casts = [

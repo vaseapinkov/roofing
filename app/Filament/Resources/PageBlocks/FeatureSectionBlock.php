@@ -20,17 +20,17 @@ class FeatureSectionBlock
             ->columns(2)
             ->schema([
                 SectionGeneral::section(),
-                SectionCta::section(),
+                SectionCta::section(false),
                 Section::make('Content')
                     ->columns(2)
                     ->schema([
                         Select::make('layout')
                             ->columnSpan(2)
                             ->required()
-                            ->default('layout_1')
+                            ->default('image-right')
                             ->options([
-                                'layout_1' => 'Image Right + Text Left',
-                                'layout_2' => 'Image Left + Text Right',
+                                'image-right' => 'Image Right + Text Left',
+                                'image-left' => 'Image Left + Text Right',
                             ]),
                         RichEditor::make('content')
                             ->columnSpan(2)

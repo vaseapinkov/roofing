@@ -10,16 +10,27 @@
 
         @elseif($content['type'] === 'feature-section')
 
-            <x-sections.feature
-                :layout="$content['data']['layout']"
-                :heading="$content['data']['heading']"
-                :sub-heading="$content['data']['sub_heading']"
-                :content="$content['data']['content']"
-                :image="$content['data']['image']"
-                :cta-link="$content['data']['cta_link']"
-                :cta-text="$content['data']['cta_text']"
-                :features="$content['data']['features']"
-            />
+            @if($content['data']['layout'] === 'image-right')
+                <x-sections.features.image-right
+                    :heading="$content['data']['heading']"
+                    :sub-heading="$content['data']['sub_heading']"
+                    :content="$content['data']['content']"
+                    :image="$content['data']['image']"
+                    :cta-link="$content['data']['cta_link']"
+                    :cta-text="$content['data']['cta_text']"
+                    :features="$content['data']['features']"
+                />
+            @elseif($content['data']['layout'] === 'image-left')
+                <x-sections.features.image-left
+                    :heading="$content['data']['heading']"
+                    :sub-heading="$content['data']['sub_heading']"
+                    :content="$content['data']['content']"
+                    :image="$content['data']['image']"
+                    :cta-link="$content['data']['cta_link']"
+                    :cta-text="$content['data']['cta_text']"
+                    :features="$content['data']['features']"
+                />
+            @endif
 
         @elseif($content['type'] === 'counter-section')
 

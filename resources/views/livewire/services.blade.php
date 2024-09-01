@@ -1,8 +1,7 @@
 @props(['services'])
 <div>
-    <x-section-bradcrumbs title="Services"/>
 
-    <x-sections.services :services="$services"/>
+    <x-sections.simple-card-grid :items="$services"/>
 
     <x-sections.counter/>
 

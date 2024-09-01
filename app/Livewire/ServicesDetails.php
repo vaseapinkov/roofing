@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Service;
+use App\Models\Settings;
 use Illuminate\View\View;
 use Livewire\Component;
 
@@ -19,6 +20,11 @@ class ServicesDetails extends Component
 
     public function render(): View
     {
-        return view('livewire.services-details')->layoutData(['navigationType' => 'default']);
+        return view('livewire.services-details')
+            ->layoutData([
+                'title' => $this->service->name,
+                'settings' => Settings::first(),
+                'navigationType' => 'default'
+            ]);
     }
 }

@@ -75,6 +75,20 @@
 
             <x-sections.text :content="$content['data']['content']"/>
 
+        @elseif($content['type'] === 'steps-section')
+
+            <x-sections.steps
+                :heading="$content['data']['heading']"
+                :sub-heading="$content['data']['sub_heading']"
+                :items="$content['data']['items']"/>
+
+        @elseif($content['type'] === 'partners-section')
+
+            <x-sections.partners
+                :heading="$content['data']['heading']"
+                :sub-heading="$content['data']['sub_heading']"
+            />
+
         @endif
 
 

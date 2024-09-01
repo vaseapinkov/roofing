@@ -1,7 +1,4 @@
-
 <div>
-
-    <x-section-bradcrumbs :title="$service->name"/>
 
     <div class="container py-[120px] grid grid-cols-12 gap-8">
 

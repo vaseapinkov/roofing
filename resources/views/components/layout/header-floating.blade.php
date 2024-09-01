@@ -1,6 +1,6 @@
 @props(['logo', 'ctaText', 'ctaLink', 'navLinks'])
 
-<header class="relative lg:absolute top-0 xl:top-7 left-0 right-0 py-5 xl:py-0 bg-white xl:bg-white/75 rounded-none xl:rounded-5 shadow-sm lg:shadow-2xl text-gray-title w-full flex justify-between items-center container mx-auto z-20">
+<header class="relative lg:absolute top-0 lg:top-7 left-0 right-0 py-5 lg:py-0 bg-white lg:bg-white/75 rounded-none lg:rounded-5 shadow-sm lg:shadow-2xl text-gray-title w-full flex justify-between items-center container mx-auto z-20">
 
     <a href="{{route('home')}}">
         <img src="{{asset($logo)}}" alt="Logo" width="150" class="w-[100px] xl:w-[130px] 2xl:w-[150px] h-auto">
@@ -14,7 +14,7 @@
         </x-button>
     </div>
 
-    <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+    <div class="absolute inset-y-0 right-0 flex items-center lg:hidden">
         <button class="relative inline-flex items-center justify-center rounded-md p-2 pr-4 text-gray-title focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 x-on:click="mobileMenuOpen = !mobileMenuOpen"
                 type="button"

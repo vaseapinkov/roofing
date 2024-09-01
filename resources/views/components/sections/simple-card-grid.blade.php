@@ -39,16 +39,18 @@
                 </div>
             @endforeach
 
-            @if(count($items) % 3 !== 0)
-                <div class="hidden xl:flex min-h-[100px] bg-primary-500 rounded-5 items-center justify-center">
-                    <a class="flex relative group/link gap-2 items-center text-lg rounded-full px-4 py-1 w-fit" href="{{$ctaLink}}">
-                        <div class="bg-secondary absolute top-0 left-0 h-12 w-12 group-hover/link:w-full transition-all duration-500 ease-out z-0 rounded-full"></div>
+            @if(isset($ctaLink) && isset($ctaText))
+                @if(count($items) % 3 !== 0)
+                    <div class="hidden xl:flex min-h-[100px] bg-primary-500 rounded-5 items-center justify-center">
+                        <a class="flex relative group/link gap-2 items-center text-lg rounded-full px-4 py-1 w-fit" href="{{$ctaLink}}">
+                            <div class="bg-secondary absolute top-0 left-0 h-12 w-12 group-hover/link:w-full transition-all duration-500 ease-out z-0 rounded-full"></div>
 
-                        <p class="z-10 text-white font-heading font bold text-3xl">{{$ctaText}}</p>
-                        <x-arrow-right stroke-width="4" class="size-7 z-10 text-white"/>
-                    </a>
-                </div>
-            @endif
+                            <p class="z-10 text-white font-heading font bold text-3xl">{{$ctaText}}</p>
+                            <x-arrow-right stroke-width="4" class="size-7 z-10 text-white"/>
+                        </a>
+                    </div>
+                @endif
+            @endisset
         </div>
     </div>
 </section>

@@ -6,8 +6,10 @@ use App\Filament\Resources\PageBlocks\ContactFormBlock;
 use App\Filament\Resources\PageBlocks\CounterSectionBlock;
 use App\Filament\Resources\PageBlocks\FeatureSectionBlock;
 use App\Filament\Resources\PageBlocks\HeroSectionBlock;
+use App\Filament\Resources\PageBlocks\PartnersSectionBlock;
 use App\Filament\Resources\PageBlocks\SimpleCardGridBlock;
 use App\Filament\Resources\PageBlocks\SimpleCardListBlock;
+use App\Filament\Resources\PageBlocks\StepsSectionBlock;
 use App\Filament\Resources\PageBlocks\TestimonialsSliderBlock;
 use App\Filament\Resources\PageBlocks\TextSectionBlock;
 use App\Filament\Resources\PageResource\Pages;
@@ -92,6 +94,8 @@ class PageResource extends Resource
                         TestimonialsSliderBlock::block(),
                         ContactFormBlock::block(),
                         TextSectionBlock::block(),
+                        StepsSectionBlock::block(),
+                        PartnersSectionBlock::block(),
                     ]),
             ]);
     }

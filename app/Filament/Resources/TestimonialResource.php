@@ -26,7 +26,9 @@ class TestimonialResource extends Resource
 
     protected static ?string $slug = 'testimonials';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-bottom-center-text';
+
+    protected static ?int $navigationSort = 6;
 
     public static function form(Form $form): Form
     {

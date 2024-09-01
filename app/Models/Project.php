@@ -11,9 +11,15 @@ class Project extends Model
 
     protected $fillable = [
         'name',
-        'sub_title',
         'home_page_description',
         'home_page_image',
         'show_on_home_page',
+        'start_date',
+        'end_date',
+        'client_name',
+        'project_type',
+        'meta_description',
+        'meta_image',
+        'content',
     ];
 }

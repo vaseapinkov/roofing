@@ -14,7 +14,7 @@ class TextSectionBlock
         return Builder\Block::make('text_section')
             ->columns(2)
             ->schema([
-                SectionGeneral::section(hidden: ['heading', 'sub_heading']),
+                SectionGeneral::section(),
                 RichEditor::make('content')->columnSpan(2),
             ]);
     }

@@ -11,6 +11,7 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\BulkActionGroup;
@@ -31,37 +32,46 @@ class ServiceResource extends Resource
 
     protected static ?string $slug = 'services';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-wrench-screwdriver';
+
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Section::make('General')
+                    ->collapsible()
+                    ->collapsed()
                     ->schema([
                         TextInput::make('name')
                             ->required(),
-                        Section::make('SEO')
-                            ->columnSpan(1)
-                            ->schema([
-                                TextInput::make('meat_title')
-                                    ->required()
-                                    ->afterStateUpdated(fn($state, callable $set) => $set('slug', Str::slug($state))),
-                                Textarea::make('meta_description')
-                                    ->hint('Keep it under 160 characters')
-                                    ->maxLength(255)
-                                    ->required()
-                                    ->afterStateUpdated(fn($state, callable $set) => $set('slug', Str::slug($state))),
-                                FileUpload::make('meat_image')
-                                    ->hint('1200x627')
-                                    ->label('Meat Image')
-                                    ->image()
-                                    ->imageEditor()
-                                    ->imageCropAspectRatio('1.91:1')
-                                    ->required(),
-                            ]),
+
+                        Toggle::make('show_on_home_page')
+                            ->required(),
+
+                    ]),
+                Section::make('SEO')
+                    ->collapsible()
+                    ->collapsed()
+                    ->columns(2)
+                    ->schema([
+                        Textarea::make('meta_description')
+                            ->hint('Keep it under 160 characters')
+                            ->rows(3)
+                            ->maxLength(255)
+                            ->required(),
+                        FileUpload::make('meta_image')
+                            ->hint('1200x627')
+                            ->label('Meta Image')
+                            ->image()
+                            ->imageEditor()
+                            ->imageCropAspectRatio('1.91:1')
+                            ->required(),
                     ]),
                 Section::make('Home Page')
+                    ->collapsible()
+                    ->collapsed()
                     ->columns(2)
                     ->schema([
                         Textarea::make('home_page_description')
@@ -86,8 +96,10 @@ class ServiceResource extends Resource
                             ->required(),
                     ]),
                 Section::make('Details Page')
+                    ->collapsible()
+                    ->collapsed()
                     ->schema([
-                        RichEditor::make('details')
+                        RichEditor::make('content')
                             ->fileAttachmentsDirectory('service-details')
                             ->label('Content')
                             ->required(),

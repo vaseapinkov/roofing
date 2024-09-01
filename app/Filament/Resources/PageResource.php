@@ -7,6 +7,7 @@ use App\Filament\Resources\PageBlocks\CounterSectionBlock;
 use App\Filament\Resources\PageBlocks\FeatureSectionBlock;
 use App\Filament\Resources\PageBlocks\HeroSectionBlock;
 use App\Filament\Resources\PageBlocks\PartnersSectionBlock;
+use App\Filament\Resources\PageBlocks\ProjectsSectionBlock;
 use App\Filament\Resources\PageBlocks\SimpleCardGridBlock;
 use App\Filament\Resources\PageBlocks\SimpleCardListBlock;
 use App\Filament\Resources\PageBlocks\StepsSectionBlock;
@@ -28,7 +29,6 @@ use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Support\Str;
 
 class PageResource extends Resource
 {
@@ -36,7 +36,9 @@ class PageResource extends Resource
 
     protected static ?string $slug = 'pages';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
@@ -96,6 +98,7 @@ class PageResource extends Resource
                         TextSectionBlock::block(),
                         StepsSectionBlock::block(),
                         PartnersSectionBlock::block(),
+                        ProjectsSectionBlock::block(),
                     ]),
             ]);
     }

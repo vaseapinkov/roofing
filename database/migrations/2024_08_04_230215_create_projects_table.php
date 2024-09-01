@@ -10,10 +10,17 @@ return new class extends Migration {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('meta_description');
+            $table->string('meta_image');
             $table->string('sub_title');
             $table->text('home_page_description');
             $table->string('home_page_image');
             $table->boolean('show_on_home_page');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->string('client_name')->nullable();
+            $table->string('project_type');
+            $table->text('content');
             $table->timestamps();
         });
     }

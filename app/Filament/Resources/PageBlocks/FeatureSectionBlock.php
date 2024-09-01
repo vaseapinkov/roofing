@@ -29,8 +29,8 @@ class FeatureSectionBlock
                             ->required()
                             ->default('layout_1')
                             ->options([
-                                'layout_1' => 'Layout 1',
-                                'layout_2' => 'Layout 2',
+                                'layout_1' => 'Image Right + Text Left',
+                                'layout_2' => 'Image Left + Text Right',
                             ]),
                         RichEditor::make('content')
                             ->columnSpan(2)

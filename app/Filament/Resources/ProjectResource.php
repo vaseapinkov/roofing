@@ -5,10 +5,14 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ProjectResource\Pages;
 use App\Models\Project;
 use Filament\Forms\Components\Checkbox;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\BulkActionGroup;
@@ -20,6 +24,7 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 
 class ProjectResource extends Resource
 {
@@ -27,37 +32,91 @@ class ProjectResource extends Resource
 
     protected static ?string $slug = 'projects';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-home';
+
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {
         return $form
-            ->columns(1)
-            ->extraAttributes(['class' => 'max-w-xl'])
             ->schema([
-                Placeholder::make('created_at')
-                    ->label('Created Date')
-                    ->hiddenOn('create')
-                    ->content(fn(?Project $record): string => $record?->created_at?->diffForHumans() ?? '-'),
+                Section::make('General')
+                    ->collapsible()
+                    ->collapsed()
+                    ->columns(2)
+                    ->schema([
+                        TextInput::make('name')
+                            ->maxLength(255)
+                            ->required(),
 
-                Placeholder::make('updated_at')
-                    ->label('Last Modified Date')
-                    ->hiddenOn('create')
-                    ->content(fn(?Project $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
+                        TextInput::make('project_type')
+                            ->maxLength(255)
+                            ->required(),
 
-                TextInput::make('name')
-                    ->required(),
+                        DatePicker::make('start_date')
+                            ->required(),
 
-                TextInput::make('sub_title')
-                    ->required(),
+                        DatePicker::make('end_date')
+                            ->required(),
 
-                Textarea::make('home_page_description')
-                    ->required(),
+                        TextInput::make('client_name'),
 
-                FileUpload::make('home_page_image')
-                    ->required(),
+                        Toggle::make('show_on_home_page')
+                            ->columnSpan(2)
+                            ->required(),
 
-                Checkbox::make('show_on_home_page'),
+
+                    ]),
+
+                Section::make('SEO')
+                    ->columns(2)
+                    ->collapsible()
+                    ->collapsed()
+                    ->schema([
+                        Textarea::make('meta_description')
+                            ->hint('Keep it under 160 characters')
+                            ->rows(3)
+                            ->maxLength(255)
+                            ->required(),
+                        FileUpload::make('meta_image')
+                            ->hint('1200x627')
+                            ->label('Meta Image')
+                            ->image()
+                            ->imageEditor()
+                            ->imageCropAspectRatio('1.91:1')
+                            ->required(),
+                    ]),
+
+                Section::make('Home Page')
+                    ->collapsible()
+                    ->collapsed()
+                    ->columns(2)
+                    ->schema([
+                        Textarea::make('home_page_description')
+                            ->hint('Keep it under 280 characters.')
+                            ->label('Description')
+                            ->columnSpan(1)
+                            ->rows(4)
+                            ->maxLength(300)
+                            ->required(),
+
+                        FileUpload::make('home_page_image')
+                            ->hint('470x315px')
+                            ->columnSpan(1)
+                            ->label('Image')
+                            ->imagePreviewHeight(200)
+                            ->required(),
+                    ]),
+                Section::make('Details Page')
+                    ->collapsible()
+                    ->collapsed()
+                    ->schema([
+                        RichEditor::make('content')
+                            ->columnSpan(2)
+                            ->fileAttachmentsDirectory('project-details')
+                            ->label('Content')
+                            ->required(),
+                    ]),
             ]);
     }
 

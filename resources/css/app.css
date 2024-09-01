@@ -35,6 +35,10 @@
         @apply text-2xl font-semibold font-heading text-gray-title mt-8 mb-4;
     }
 
+    h3 {
+        @apply text-xl font-semibold font-heading text-gray-title mt-4 mb-2;
+    }
+
     p {
         @apply font-body text-gray-body;
     }

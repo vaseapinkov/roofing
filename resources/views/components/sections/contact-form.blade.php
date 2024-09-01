@@ -32,7 +32,7 @@
 @elseif($layout === 'big')
     <section>
 
-        <div class="container pt-[120px]">
+        <div class="container py-[90px]">
 
             <x-section-title :centred="false" :title="$heading" :sub-title="$subHeading"/>
 
@@ -57,7 +57,7 @@
                     </div>
                 </form>
                 <div class="hidden lg:block col-span-5 relative">
-                    <div class="absolute -bottom-[35px] -right-[35px] xl:-bottom-[148px] xl:-right-[65px] w-full">
+                    <div class="absolute -bottom-[100px] -right-[35px] xl:-bottom-[148px] xl:-right-[65px] w-full">
                         <img class="scale-[0.8]" src="{{Vite::asset('resources/images/appointment_img.png')}}" alt="Builder">
                     </div>
                 </div>

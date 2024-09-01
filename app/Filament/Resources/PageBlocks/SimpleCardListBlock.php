@@ -4,10 +4,13 @@ namespace App\Filament\Resources\PageBlocks;
 
 use App\Filament\Resources\Sections\SectionGeneral;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Builder;
 use Filament\Forms;
+use Filament\Forms\Get;
 
 class SimpleCardListBlock
 {
@@ -16,24 +19,12 @@ class SimpleCardListBlock
         return Builder\Block::make('simple-card-list')
             ->schema([
                 SectionGeneral::section(hidden: ['heading', 'sub_heading']),
-                Forms\Components\Section::make('Content')
-                    ->description('Overlaps with previous section | Best suited for 3 items')
+                Section::make('Content')
+                    ->description('Overlaps with previous section')
                     ->schema([
-                    Select::make('list_items')
-                        ->options([
-                            'services' => 'Services',
-                            'projects' => 'Projects',
-                            'custom' => 'Custom',
-                        ])
-                        ->live()
-                        ->label('Items')
-                        ->required(),
-                    Forms\Components\Repeater::make('custom_list_items')
+                    Repeater::make('items')
                         ->columns(2)
-                        ->label('Custom List Items')
-                        ->visible(function (Forms\Get $get) {
-                            return $get('list_items') == 'custom';
-                        })
+                        ->label('List Items')
                         ->maxItems(3)
                         ->schema([
                             TextInput::make('title')

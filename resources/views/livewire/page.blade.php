@@ -4,17 +4,9 @@
             <x-sections.hero :heading="$content['data']['heading']" :sub-heading="$content['data']['sub_heading']" :cta-link="$content['data']['cta_link']" :cta-text="$content['data']['cta_text']"/>
         @elseif($content['type'] === 'simple-card-list')
 
-            @php
-                $strategy = match($content['data']['list_items']) {
-                    'services' => new \App\Services\ContentTransformations\ServicesTransformation(),
-                    'custom' => new \App\Services\ContentTransformations\CustomListItemsTransformation(),
-                };
-
-                $transformer = new \App\Services\ContentTransformations\ContentTransformer($strategy);
-                $data = $transformer->transform($content);
-            @endphp
-
-            <x-sections.simple-card-list :items="$data"/>
+            <x-sections.simple-card-list
+                :items="$content['data']['items']"
+            />
 
         @elseif($content['type'] === 'feature-section')
 
@@ -53,7 +45,6 @@
                 :items="$data"
             />
 
-
         @elseif($content['type'] === 'testimonials-slider')
 
             <x-sections.testimonials
@@ -89,8 +80,14 @@
                 :sub-heading="$content['data']['sub_heading']"
             />
 
-        @endif
+        @elseif($content['type'] === 'projects-section')
 
+            <x-sections.projects
+                :heading="$content['data']['heading']"
+                :sub-heading="$content['data']['sub_heading']"
+            />
+
+        @endif
 
     @endforeach
 

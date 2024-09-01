@@ -14,8 +14,7 @@ class SectionGeneral
             ->schema([
                 TextInput::make('heading')
                     ->label('Heading')
-                    ->hidden(in_array('heading', $hidden))
-                    ->required(),
+                    ->hidden(in_array('heading', $hidden)),
                 TextInput::make('sub_heading')
                     ->hidden(in_array('sub_heading', $hidden))
                     ->label('Sub Heading'),

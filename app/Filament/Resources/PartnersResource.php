@@ -6,6 +6,7 @@ use App\Filament\Resources\partnersResource\Pages;
 use App\Models\Partners;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -31,17 +32,24 @@ class PartnersResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name')
-                    ->required(),
+                Section::make('General')
+                    ->schema([
+                        TextInput::make('name')
+                            ->label('Partner Name')
+                            ->required(),
 
-                TextInput::make('url')
-                    ->hint('Start with: https://')
-                    ->required()
-                    ->url(),
+                        TextInput::make('url')
+                            ->label('Home Page URL')
+                            ->hint('Should start with: https://')
+                            ->required()
+                            ->url(),
 
-                FileUpload::make('image')
-                    ->required()
-                    ->hint('Height: 80px'),
+                        FileUpload::make('image')
+                            ->label('Partner Logo')
+                            ->imagePreviewHeight(80)
+                            ->required()
+                            ->hint('Height: 80px'),
+                    ]),
             ]);
     }
 

@@ -28,7 +28,7 @@
 
 
         @if(isset($ctaText) && isset($ctaLink))
-            <x-button :href="$ctaLink" icon="arrow-right" class="w-fit">{{$ctaText}}</x-button>
+            <x-button wire:navigate.hover :href="$ctaLink" icon="arrow-right" class="w-fit">{{$ctaText}}</x-button>
         @endif
     </div>
 

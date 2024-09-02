@@ -9,7 +9,7 @@ use App\Filament\Resources\PageBlocks\HeroSectionBlock;
 use App\Filament\Resources\PageBlocks\PartnersSectionBlock;
 use App\Filament\Resources\PageBlocks\ProjectsSectionBlock;
 use App\Filament\Resources\PageBlocks\ServicesSectionBlock;
-use App\Filament\Resources\PageBlocks\SimpleCardListBlock;
+use App\Filament\Resources\PageBlocks\CardListSectionBlock;
 use App\Filament\Resources\PageBlocks\StepsSectionBlock;
 use App\Filament\Resources\PageBlocks\TestimonialsSliderBlock;
 use App\Filament\Resources\PageBlocks\TextSectionBlock;
@@ -89,7 +89,7 @@ class PageResource extends Resource
                     ->label('Sections')
                     ->blocks([
                         HeroSectionBlock::block()->maxItems(1),
-                        SimpleCardListBlock::block(),
+                        CardListSectionBlock::block(),
                         FeatureSectionBlock::block(),
                         CounterSectionBlock::block(),
                         ServicesSectionBlock::block(),

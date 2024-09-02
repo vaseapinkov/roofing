@@ -22,4 +22,9 @@ class Project extends Model
         'meta_image',
         'content',
     ];
+
+    protected $casts = [
+      'start_date' => 'date',
+      'end_date' => 'date',
+    ];
 }

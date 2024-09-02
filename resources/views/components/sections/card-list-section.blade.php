@@ -1,8 +1,8 @@
-@props(['items'])
+@props(['items', 'overlap', 'hasBackgroundImage', 'backgroundImage'])
 
-<section class="bg-center bg-no-repeat bg-cover pb-[90px]" style="background-image: url('{{Vite::asset('resources/images/features-bg.jpg')}}')">
+<section @class(['pb-[90px]' => $overlap, 'py-[90px]' => !$overlap, 'bg-center bg-no-repeat bg-cover' => 'hasBackgroundImage']) @if($hasBackgroundImage) style="background-image: url('{{asset($backgroundImage)}}')" @endif>
     <div class="container">
-        <div class="relative flex flex-col lg:flex-row flex-wrap justify-around -mt-36 z-10 gap-y-8">
+        <div @class(['-mt-36' => $overlap, 'relative flex flex-col lg:flex-row flex-wrap justify-around z-10 gap-y-8'])>
             @foreach($items as $item)
                 <div class="max-w-[375px] lg:max-w-none lg:w-[31%] bg-white px-4 pt-4 pb-5 shadow-card rounded-5 flex flex-col  mx-auto lg:mx-0">
                     <h4 class="text-xl font-bold font-heading mt-3">{{$item['title']}}</h4>

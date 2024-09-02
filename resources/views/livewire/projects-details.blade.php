@@ -10,6 +10,28 @@
 
         <div class="bg-white shadow-card rounded-10 py-8 px-8">
             <h4 class="text-2xl font-semibold font-heading text-gray-title">
+                Project Details
+            </h4>
+
+            <div class="grid grid-cols-2 gap-y-4 mt-6">
+                <p class="font-medium text-gray-title">Start Date:</p>
+                <p class="text-gray-body">{{$project->start_date->format('d M Y')}}</p>
+
+                <p class="font-medium text-gray-title">End Date:</p>
+                <p class="text-gray-body">{{$project->end_date->format('d M Y')}}</p>
+
+                @isset($project->client_name)
+                    <p class="font-medium  text-gray-title">Client:</p>
+                    <p class="text-gray-body">{{$project->client_name}}</p>
+                @endisset
+
+                <p class="font-medium text-gray-title">Project Typ:</p>
+                <p class="text-gray-body">{{$project->project_type}}</p>
+            </div>
+        </div>
+
+        <div class="bg-white shadow-card rounded-10 py-8 px-8">
+            <h4 class="text-2xl font-semibold font-heading text-gray-title">
                 All our services
             </h4>
 

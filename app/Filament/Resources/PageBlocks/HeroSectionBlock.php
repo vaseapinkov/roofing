@@ -7,6 +7,7 @@ use App\Filament\Resources\Sections\SectionGeneral;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Builder;
+use Filament\Forms\Components\Toggle;
 
 class HeroSectionBlock
 {
@@ -20,6 +21,10 @@ class HeroSectionBlock
                 Section::make('Background Image')
                     ->columns(2)
                     ->schema([
+                        Toggle::make('background_filter')
+                            ->required()
+                            ->columnSpan(2)
+                            ->label('Enable blue filter'),
                         FileUpload::make('background_image')
                             ->hint('1905x905px')
                             ->label('Desktop Image')

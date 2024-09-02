@@ -1,11 +1,20 @@
 <div>
     @foreach($page->content as $content)
         @if($content['type'] === 'hero')
-            <x-sections.hero :heading="$content['data']['heading']" :sub-heading="$content['data']['sub_heading']" :cta-link="$content['data']['cta_link']" :cta-text="$content['data']['cta_text']"/>
-        @elseif($content['type'] === 'simple-card-list')
+            <x-sections.hero
+                :heading="$content['data']['heading']"
+                :sub-heading="$content['data']['sub_heading']"
+                :cta-link="$content['data']['cta_link']"
+                :cta-text="$content['data']['cta_text']"
+                :background-filter="$content['data']['background_filter']"
+            />
+        @elseif($content['type'] === 'card-list-section')
 
-            <x-sections.simple-card-list
+            <x-sections.card-list-section
                 :items="$content['data']['items']"
+                :overlap="$content['data']['overlap']"
+                :has-background-image="$content['data']['has_background_image']"
+                :background-image="$content['data']['background_image']"
             />
 
         @elseif($content['type'] === 'feature-section')

@@ -7,8 +7,10 @@ use App\Models\Testimonial;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\BulkActionGroup;
@@ -19,6 +21,7 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Schema;
 
 class TestimonialResource extends Resource
 {
@@ -34,41 +37,50 @@ class TestimonialResource extends Resource
     {
         return $form
             ->columns(1)
-            ->extraAttributes(['class' => 'max-w-xl'])
             ->schema([
-                Placeholder::make('created_at')
-                    ->label('Created Date')
-                    ->hiddenOn('create')
-                    ->content(fn(?Testimonial $record): string => $record?->created_at?->diffForHumans() ?? '-'),
+                Section::make('Client')
+                    ->schema([
+                        TextInput::make('client_name')
+                            ->maxLength(255)
+                            ->required(),
 
-                Placeholder::make('updated_at')
-                    ->label('Last Modified Date')
-                    ->hiddenOn('create')
-                    ->content(fn(?Testimonial $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
+                        FileUpload::make('client_avatar')
+                            ->hint('50x50px')
+                            ->imageCropAspectRatio('1:1')
+                            ->required(),
+                    ]),
+                Section::make('Review Details')
+                    ->columns(2)
+                    ->schema([
+                        Toggle::make('show_on_home_page')
+                            ->columnSpan(2)
+                            ->required(),
 
-                TextInput::make('review_link')
-                    ->required(),
+                        TextInput::make('review_link')
+                            ->columnSpan(1)
+                            ->hint('Link to review usually form Google Maps')
+                            ->required(),
 
-                Textarea::make('message')
-                    ->rows(10)
-                    ->required(),
+                        TextInput::make('stars')
+                            ->columnSpan(1)
+                            ->minValue(1)
+                            ->maxValue(5)
+                            ->type('number')
+                            ->required(),
 
-                TextInput::make('client_name')
-                    ->required(),
+                        Textarea::make('message')
+                            ->columnSpan(2)
+                            ->hint('Keep under 300 characters')
+                            ->rows(6)
+                            ->required(),
 
-                FileUpload::make('client_avatar')
-                    ->required(),
 
-                FileUpload::make('project_photo')
-                    ->required(),
+                        FileUpload::make('project_photo')
+                            ->columnSpan(2)
+                            ->hint('Max Height 500px')
+                            ->required(),
 
-                TextInput::make('stars')
-                    ->minValue(1)
-                    ->maxValue(5)
-                    ->type('number')
-                    ->required(),
-
-                Checkbox::make('show_on_home_page'),
+                    ]),
             ]);
     }
 

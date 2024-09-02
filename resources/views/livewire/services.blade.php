@@ -3,8 +3,6 @@
 
     <x-sections.simple-card-grid :items="$services"/>
 
-    <x-sections.counter/>
-
     <x-sections.forms.book-appintment
         heading="Book Your Appointment"
         sub-heading="Your roof require professional attention"

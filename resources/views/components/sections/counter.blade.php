@@ -15,7 +15,7 @@ if (!isset($items)) $items = $counterData;
             @foreach($items as $item)
                 <div class="font-heading text-center">
                     <div class="bg-primary-500 rounded-full mb-5 w-[80px] aspect-square flex items-center justify-center mx-auto transform hover:translate-y-[5px] transition duration-500">
-                        <img src="{{asset($item['icon'])}}" alt="Counter Icon">
+                        <img src="{{asset('storage/' . $item['icon'])}}" alt="Counter Icon">
                     </div>
                     <h4 class="text-gray-title text-3xl font-bold mb-1.5">{{$item['number']}}</h4>
                     <p class="text-gray-body">{{$item['name']}}</p>

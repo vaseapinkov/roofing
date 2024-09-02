@@ -18,7 +18,7 @@
                         </div>
                     </a>
                 </div>
-                <img class="w-full max-w-fit rounded-10" src="{{asset($project->home_page_image)}}" alt="Project: {{$project->name}} ">
+                <img class="w-full max-w-fit rounded-10" src="{{asset('storage/' . $project->home_page_image)}}" alt="Project: {{$project->name}} ">
             </div>
         @endforeach
     </div>

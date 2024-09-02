@@ -13,7 +13,7 @@
                 <div class="grid grid-cols-6 gap-4">
                     @foreach($instagramPosts as $post)
                         <a href="{{$post['instagram_link']}}" target="_blank">
-                            <img class="rounded-5 w-[120px] aspect-square" src="{{asset($post['image'])}}" alt="Instagram Image">
+                            <img class="rounded-5 w-[120px] aspect-square" src="{{asset('storage/' . $post['image'])}}" alt="Instagram Image">
                         </a>
                     @endforeach
                 </div>
@@ -43,7 +43,7 @@
 
         <div class="flex flex-col md:flex-row gap-8 md:gap-0 justify-between items-center px-8 py-6 md:py-4 bg-primary-600 rounded-5">
             <div>
-                <img src="{{asset($logo)}}" alt="Logo">
+                <img src="{{asset('storage/' . $logo)}}" alt="Logo">
             </div>
             <div class="bg-primary-500 flex flex-col md:flex-row gap-4 md:gap-8 p-4 rounded-5 text-start md:text-center">
                 <div class="hidden bg-white w-[70px] aspect-square lg:flex items-center justify-center rounded-5 mx-auto md:mx-0">

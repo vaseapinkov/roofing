@@ -12,7 +12,7 @@
                     <div class="absolute top-0 right-6 rounded-full w-10 h-10 bg-primary-500 border-[5px] border-white flex items-center justify-center font-medium font-heading text-white">
                         <span>0{{$loop->index + 1}}</span>
                     </div>
-                    <img src="{{asset($item['image'])}}" height="122" width="80" class="h-[122px] w-[80px] max-w-none" alt="Step {{$loop->index + 1}}">
+                    <img src="{{asset('storage/' . $item['image'])}}" height="122" width="80" class="h-[122px] w-[80px] max-w-none" alt="Step {{$loop->index + 1}}">
                 </div>
 
                 <div>

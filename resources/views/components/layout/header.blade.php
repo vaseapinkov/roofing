@@ -3,7 +3,7 @@
 <header class="py-5 xl:py-0 bg-white shadow-sm lg:shadow-2xl text-gray-title w-full relative z-[100]">
     <div class="container flex justify-between items-center mx-auto">
         <a href="/">
-            <img src="{{asset($logo)}}" alt="Logo" width="150" class="w-[100px] xl:w-[130px] 2xl:w-[150px] h-auto">
+            <img src="{{asset('storage/' . $logo)}}" alt="Logo" width="150" class="w-[100px] xl:w-[130px] 2xl:w-[150px] h-auto">
         </a>
 
         <x-layout.navigation :nav-links="$navLinks"/>

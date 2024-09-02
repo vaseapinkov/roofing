@@ -18,7 +18,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-3 justify-items-stretch">
             @foreach($services as $service)
                 <div class="group relative overflow-hidden bg-white shadow-card rounded-5 h-full lg:min-h-[283px] 2xl:min-h-[315px]">
-                    <img class="-z-[100] lg:z-0 opacity-0 lg:group-hover:opacity-100 transition-all duration-500 ease-in absolute w-full h-full" src="{{asset($service->home_page_image)}}" alt="Service {{$service->name}}">
+                    <img class="-z-[100] lg:z-0 opacity-0 lg:group-hover:opacity-100 transition-all duration-500 ease-in absolute w-full h-full" src="{{'storage/' . asset($service->home_page_image)}}" alt="Service {{$service->name}}">
                     <div class="-z-[100] lg:z-0 opacity-0 lg:group-hover:opacity-100 transition-all duration-500 ease-in absolute w-full h-full bg-gradient-to-r from-primary-500/85 to-primary-500/40 rounded-5">
                     </div>
 
@@ -26,7 +26,7 @@
                         <div class="lg:group-hover:-mt-[50%] lg:group-hover:opacity-0 transition-all duration-500 ease-in">
                             <div class="bg-primary-500 size-24 p-4 rounded-full flex items-center justify-center mb-[55px] shadow-glow">
                                 <a href="{{route('services.show', $service)}}" wire:navigate.hover>
-                                    <img class="w-full max-w-[40px] h-auto" src="{{asset($service->icon)}}" alt="Icon: {{$service->name}}">
+                                    <img class="w-full max-w-[40px] h-auto" src="{{asset('storage/' . $service->icon)}}" alt="Icon: {{$service->name}}">
                                 </a>
                             </div>
                             <a href="{{route('services.show', $service)}}" wire:navigate.hover>

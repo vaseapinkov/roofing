@@ -51,24 +51,7 @@ class ServiceResource extends Resource
                             ->required(),
 
                     ]),
-                Section::make('SEO')
-                    ->collapsible()
-                    ->collapsed()
-                    ->columns(2)
-                    ->schema([
-                        Textarea::make('meta_description')
-                            ->hint('Keep it under 160 characters')
-                            ->rows(3)
-                            ->maxLength(255)
-                            ->required(),
-                        FileUpload::make('meta_image')
-                            ->hint('1200x627')
-                            ->label('Meta Image')
-                            ->image()
-                            ->imageEditor()
-                            ->imageCropAspectRatio('1.91:1')
-                            ->required(),
-                    ]),
+
                 Section::make('Home Page')
                     ->collapsible()
                     ->collapsed()
@@ -100,8 +83,25 @@ class ServiceResource extends Resource
                 Section::make('Details Page')
                     ->collapsible()
                     ->collapsed()
+                    ->columns(2)
                     ->schema([
+                        Textarea::make('meta_description')
+                            ->hint('Keep it under 160 characters')
+                            ->rows(3)
+                            ->columnSpan(1)
+                            ->maxLength(255)
+                            ->required(),
+                        FileUpload::make('meta_image')
+                            ->hint('1200x627')
+                            ->label('Meta Image')
+                            ->columnSpan(1)
+                            ->image()
+                            ->imageEditor()
+                            ->imageCropAspectRatio('1.91:1')
+                            ->required(),
+
                         RichEditor::make('content')
+                            ->columnSpan(2)
                             ->fileAttachmentsDirectory('service-details')
                             ->label('Content')
                             ->required(),

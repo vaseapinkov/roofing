@@ -10,7 +10,8 @@
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
-        "resend/resend-laravel": "^0.14.0"
+        "resend/resend-laravel": "^0.14.0",
+        "spatie/image": "^3.7"
     },
     "require-dev": {
         "deployer/deployer": "^7.4",

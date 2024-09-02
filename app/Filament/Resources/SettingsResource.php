@@ -19,6 +19,8 @@ use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Storage;
+use Spatie\Image\Image;
 
 class SettingsResource extends Resource
 {
@@ -64,7 +66,7 @@ class SettingsResource extends Resource
                             ->reorderableWithDragAndDrop()
                             ->collapsible()
                             ->cloneable()
-                            ->itemLabel(fn (array $state): ?string => $state['label'] ?? null)
+                            ->itemLabel(fn(array $state): ?string => $state['label'] ?? null)
                             ->schema([
                                 TextInput::make('label')
                                     ->required(),
@@ -158,10 +160,12 @@ class SettingsResource extends Resource
                     ->description('This scripts will load on every page, if you wish to add some code for a specific page check for a similar section in the page settings')
                     ->schema([
                         Textarea::make('scripts_head')
+                            ->hint('Most of 3rd party scrips come here')
                             ->rows(10)
                             ->required(),
 
                         Textarea::make('scripts_body')
+                            ->hint('Some scrips require to be added before the end of the "body" tag, add them here')
                             ->rows(10)
                             ->required(),
 

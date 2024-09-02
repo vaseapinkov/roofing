@@ -2,9 +2,9 @@
 
     <div class="container py-[120px] grid grid-cols-12 gap-8">
 
-        <div id="post" class="col-span-12 xl:col-span-8">
+        <div class="content col-span-12 xl:col-span-8">
             <div>
-                {!! $service->details !!}
+                {!! $service->content !!}
             </div>
         </div>
 

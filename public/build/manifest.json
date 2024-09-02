@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-CRqW20Kb.css",
+    "file": "assets/app-HPeCcZIO.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -124,6 +124,42 @@
     "file": "assets/6-BXef9EEA.png",
     "src": "resources/images/instagram/6.png"
   },
+  "resources/images/insurance/globe.svg": {
+    "file": "assets/globe-C3-noeCE.svg",
+    "src": "resources/images/insurance/globe.svg"
+  },
+  "resources/images/insurance/icon-1.svg": {
+    "file": "assets/icon-1-CUNyJinu.svg",
+    "src": "resources/images/insurance/icon-1.svg"
+  },
+  "resources/images/insurance/icon-2.svg": {
+    "file": "assets/icon-2-CIXznusE.svg",
+    "src": "resources/images/insurance/icon-2.svg"
+  },
+  "resources/images/insurance/photo-1.jpg": {
+    "file": "assets/photo-1-BMCALATU.jpg",
+    "src": "resources/images/insurance/photo-1.jpg"
+  },
+  "resources/images/insurance/photo-2.jpg": {
+    "file": "assets/photo-2-Ba0wfXCJ.jpg",
+    "src": "resources/images/insurance/photo-2.jpg"
+  },
+  "resources/images/insurance/photo-3.jpg": {
+    "file": "assets/photo-3-Bb8r5yvP.jpg",
+    "src": "resources/images/insurance/photo-3.jpg"
+  },
+  "resources/images/insurance/shaoe-2.png": {
+    "file": "assets/shaoe-2-CZPznxG-.png",
+    "src": "resources/images/insurance/shaoe-2.png"
+  },
+  "resources/images/insurance/shape-1.png": {
+    "file": "assets/shape-1-CEjEEST5.png",
+    "src": "resources/images/insurance/shape-1.png"
+  },
+  "resources/images/insurance/shape-3.png": {
+    "file": "assets/shape-3-DJTk7jRY.png",
+    "src": "resources/images/insurance/shape-3.png"
+  },
   "resources/images/logo.svg": {
     "file": "assets/logo-WMOzKElW.svg",
     "src": "resources/images/logo.svg"
@@ -139,6 +175,10 @@
   "resources/images/project_img01.jpg": {
     "file": "assets/project_img01-CwVGKFQm.jpg",
     "src": "resources/images/project_img01.jpg"
+  },
+  "resources/images/service-details/form-bg.jpg": {
+    "file": "assets/form-bg-8V8macuM.jpg",
+    "src": "resources/images/service-details/form-bg.jpg"
   },
   "resources/images/services.jpg": {
     "file": "assets/services-BRGh1kaJ.jpg",

@@ -1,12 +1,10 @@
 @props(['ctaLink', 'ctaText'])
 @php
-
-    if (Route::current() === 'home') {
+    if (Route::current()->uri === '/') {
         $services = \App\Models\Service::where('show_on_home_page', true)->get();
     }else{
         $services = \App\Models\Service::all();
     }
-
 @endphp
 
 

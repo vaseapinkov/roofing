@@ -28,8 +28,8 @@ class ContactFormBlock
                         Select::make('layout')
                             ->default('small')
                             ->options([
-                                'small' => 'Small (Name and Email)',
-                                'big' => 'Book Appointment (Name, Email, Phone, Address, Message)',
+                                'basic' => 'Basic (Name and Email)',
+                                'book-appointment' => 'Book Appointment (Name, Email, Phone, Address, Message)',
                             ]),
                     ]),
             ]);

@@ -2,17 +2,20 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Forms\ContactForm;
 use App\Models\Settings;
 use Illuminate\View\View;
 use Livewire\Component;
+use App\Models\Page as PageModel;
 
 class Page extends Component
 {
-    public \App\Models\Page $page;
+    public PageModel $page;
+    public ContactForm $form;
 
     public function mount($page = null): void
     {
-        $this->page = $page ?? \App\Models\Page::where('slug', 'home')->first();
+        $this->page = $page ?? PageModel::where('slug', 'home')->first();
     }
 
     public function render(): View
@@ -23,5 +26,10 @@ class Page extends Component
                 'settings' => Settings::first(),
                 'navigationType' => $this->page->navigation_type,
             ]);
+    }
+
+    public function save(): void
+    {
+        $this->form->saveMessage();
     }
 }

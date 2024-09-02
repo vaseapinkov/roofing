@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Forms\ContactForm;
 use App\Models\Service;
 use App\Models\Settings;
 use App\Models\VisitorMessage;
@@ -12,6 +13,8 @@ use Livewire\Component;
 
 class Services extends Component
 {
+    public ContactForm $form;
+
     public function render(): View
     {
         $services = Service::all()->toArray();
@@ -24,25 +27,12 @@ class Services extends Component
         ])->layoutData([
             'title' => 'Services',
             'settings' => Settings::first(),
-            'navigationType' => 'default'
+            'navigationType' => 'default',
         ]);
     }
 
-    public function saveMessage(): void
+    public function save(): void
     {
-
-        VisitorMessage::create([
-            'first_name' => $this->first_name === null ?  '-' : $this->first_name,
-            'last_name' => $this->last_name === null ?  '-' : $this->last_name,
-            'email' => $this->email,
-            'phone' => $this->phone,
-            'subject' => '-',
-            'message' => $this->message === null ?  '-' : $this->message,
-            'address' => $this->address === null ?  '-' : $this->address,
-        ]);
-
-        $this->reset();
-        session()->flash('status', 'Thank you! Your message has been sent successfully.');
-
+        $this->form->saveMessage();
     }
 }

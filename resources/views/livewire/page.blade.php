@@ -65,13 +65,21 @@
 
         @elseif($content['type'] === 'contact-form')
 
-            <x-sections.contact-form
-                :heading="$content['data']['heading']"
-                :sub-heading="$content['data']['sub_heading']"
-                :layout="$content['data']['layout']"
-                :ctaText="$content['data']['cta_text']"
-                :success-message="$content['data']['success_message']"
-            />
+            @if($content['data']['layout'] === 'book-appointment')
+                <x-sections.forms.book-appintment
+                    :heading="$content['data']['heading']"
+                    :sub-heading="$content['data']['sub_heading']"
+                    :ctaText="$content['data']['cta_text']"
+                    :success-message="$content['data']['success_message']"
+                />
+            @elseif($content['data']['layout'] === 'basic')
+                <x-sections.forms.basic
+                    :heading="$content['data']['heading']"
+                    :sub-heading="$content['data']['sub_heading']"
+                    :ctaText="$content['data']['cta_text']"
+                    :success-message="$content['data']['success_message']"
+                />
+            @endif
 
         @elseif($content['type'] === 'text_section')
 

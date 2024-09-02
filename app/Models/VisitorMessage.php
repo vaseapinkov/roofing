@@ -17,6 +17,7 @@ class VisitorMessage extends Model
         'email',
         'phone',
         'subject',
+        'address',
         'message',
     ];
 
@@ -25,7 +26,7 @@ class VisitorMessage extends Model
         parent::boot();
 
         static::created(function ($visitorMessage) {
-            Mail::to(config('mail.to'))->send(new VisitorMessageCreatedMail($visitorMessage));
+            Mail::to(config('mail.to.address'))->send(new VisitorMessageCreatedMail($visitorMessage));
         });
     }
 }

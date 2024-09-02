@@ -38,22 +38,11 @@
                 :items="$content['data']['items']"
             />
 
-        @elseif($content['type'] === 'simple-card-grid')
+        @elseif($content['type'] === 'services-section')
 
-            @php
-                $strategy = match($content['data']['list_items']) {
-                    'services' => new \App\Services\ContentTransformations\ServicesTransformation(),
-                    'custom' => new \App\Services\ContentTransformations\CustomListItemsTransformation(),
-                };
-
-                $transformer = new \App\Services\ContentTransformations\ContentTransformer($strategy);
-                $data = $transformer->transform($content);
-            @endphp
-
-            <x-sections.simple-card-grid
+            <x-sections.services-section
                 :ctaText="$content['data']['cta_text']"
                 :ctaLink="$content['data']['cta_link']"
-                :items="$data"
             />
 
         @elseif($content['type'] === 'testimonials-slider')

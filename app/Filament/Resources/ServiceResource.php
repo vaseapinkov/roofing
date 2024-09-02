@@ -85,14 +85,16 @@ class ServiceResource extends Resource
                             ->hint('White Outline | 96x96px')
                             ->columnSpan(1)
                             ->label('Icon')
-                            ->imagePreviewHeight(100)
+                            ->imagePreviewHeight(96)
                             ->required(),
 
                         FileUpload::make('home_page_image')
                             ->hint('470x315px')
                             ->columnSpan(1)
-                            ->label('Image')
-                            ->imagePreviewHeight(200)
+                            ->label('Background Image')
+                            ->imagePreviewHeight(300)
+                            ->imageEditor()
+                            ->imageCropAspectRatio('1.49:1')
                             ->required(),
                     ]),
                 Section::make('Details Page')

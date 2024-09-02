@@ -8,7 +8,7 @@ use App\Filament\Resources\PageBlocks\FeatureSectionBlock;
 use App\Filament\Resources\PageBlocks\HeroSectionBlock;
 use App\Filament\Resources\PageBlocks\PartnersSectionBlock;
 use App\Filament\Resources\PageBlocks\ProjectsSectionBlock;
-use App\Filament\Resources\PageBlocks\SimpleCardGridBlock;
+use App\Filament\Resources\PageBlocks\ServicesSectionBlock;
 use App\Filament\Resources\PageBlocks\SimpleCardListBlock;
 use App\Filament\Resources\PageBlocks\StepsSectionBlock;
 use App\Filament\Resources\PageBlocks\TestimonialsSliderBlock;
@@ -92,7 +92,7 @@ class PageResource extends Resource
                         SimpleCardListBlock::block(),
                         FeatureSectionBlock::block(),
                         CounterSectionBlock::block(),
-                        SimpleCardGridBlock::block(),
+                        ServicesSectionBlock::block(),
                         TestimonialsSliderBlock::block(),
                         ContactFormBlock::block(),
                         TextSectionBlock::block(),

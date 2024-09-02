@@ -1,7 +1,7 @@
 @props(['services'])
 <div>
 
-    <x-sections.simple-card-grid :items="$services"/>
+    <x-sections.services-section/>
 
     <x-sections.forms.book-appintment
         heading="Book Your Appointment"

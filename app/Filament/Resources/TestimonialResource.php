@@ -96,8 +96,8 @@ class TestimonialResource extends Resource
                 TextColumn::make('client_name')
                     ->label("Name"),
 
-                TextColumn::make('client_title')
-                    ->label("Title"),
+                TextColumn::make('stars')
+                    ->label("Stars"),
 
                 TextColumn::make('message')
                     ->label("Review Message")

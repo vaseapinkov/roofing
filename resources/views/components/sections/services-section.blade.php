@@ -2,7 +2,7 @@
 @php
 
     if (Route::current() === 'home') {
-        $services = \App\Models\Service::where('show_on_home_page', true);
+        $services = \App\Models\Service::where('show_on_home_page', true)->get();
     }else{
         $services = \App\Models\Service::all();
     }

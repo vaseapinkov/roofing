@@ -128,7 +128,7 @@ class ProjectResource extends Resource
                     ->searchable()
                     ->sortable(),
 
-                TextColumn::make('home_page_description')->limit(50),
+                TextColumn::make('project_type'),
 
                 ToggleColumn::make('show_on_home_page'),
             ])

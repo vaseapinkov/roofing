@@ -113,15 +113,13 @@ class ServiceResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('home_page_icon')
+                ImageColumn::make('icon')
                     ->label('Icon')
                     ->size(40),
 
                 TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
-
-                TextColumn::make('home_page_description')->limit(50),
 
                 ToggleColumn::make('show_on_home_page'),
             ])

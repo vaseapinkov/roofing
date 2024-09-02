@@ -23,6 +23,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\DeleteBulkAction;
@@ -107,7 +108,7 @@ class PageResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title')
+                TextColumn::make('meta_title')
                     ->searchable()
                     ->sortable(),
 
@@ -120,7 +121,7 @@ class PageResource extends Resource
             ])
             ->actions([
                 EditAction::make(),
-                DeleteAction::make(),
+                DeleteAction::make()->requiresConfirmation(),
             ])
             ->bulkActions([
                 BulkActionGroup::make([

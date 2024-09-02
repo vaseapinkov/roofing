@@ -57,13 +57,18 @@ class PartnersResource extends Resource
     {
         return $table
             ->columns([
+                ImageColumn::make('image')
+                    ->label('Logo')
+                    ->height(40),
+
                 TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
 
-                TextColumn::make('url'),
-
-                ImageColumn::make('image'),
+                TextColumn::make('url')
+                ->searchable()
+                ->sortable()
+                ->label('Home Page URL'),
             ])
             ->filters([
                 //

@@ -6,10 +6,8 @@ use App\Filament\Resources\Sections\SectionGeneral;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Builder;
-use Filament\Forms;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Get;
 
@@ -42,7 +40,6 @@ class CardListSectionBlock
                     ]),
 
                 Section::make('Content')
-                    ->description('Overlaps with previous section')
                     ->schema([
                         Repeater::make('items')
                             ->columns(2)

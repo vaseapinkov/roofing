@@ -1,6 +1,6 @@
 @props(['heading' => $heading, 'subHeading' => $subHeading])
 
-@php($testimonials = \App\Models\Testimonial::all())
+@php($testimonials = \App\Models\Testimonial::where('show_on_home_page', true)->get())
 
 <section class="bg-gray-light pt-[120px] pb-[90px]">
     <div class="container">

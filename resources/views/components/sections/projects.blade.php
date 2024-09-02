@@ -13,17 +13,23 @@
             @foreach(\App\Models\Project::all() as $project)
                 <div class="z-10 relative group flex flex-col lg:flex-row gap-4 lg:gap-0 items-start lg:items-center justify-between py-[20px] lg:py-[10px] px-[20px] lg:px-[50px] lg:hover:bg-gray-light transition-all duration-300 ease-in bg-primary-500 rounded-10 min-h-[180px]">
 
-                    <img class="w-full lg:hidden rounded-5" src="{{asset('storage/' .$project->home_page_image)}}" alt="Project Image">
+                    <a href="{{route('projects.show', $project)}}">
+                        <img class="w-full lg:hidden rounded-5" src="{{asset('storage/' .$project->home_page_image)}}" alt="Project Image">
+                    </a>
 
                     <div class="font-heading w-[50%] overflow-hidden">
                         <div class="lg:group-hover:-mt-[50%] lg:group-hover:opacity-0 transition-all duration-500 ease-in">
-                            <p class="text-secondary text-lg mb-2">{{$project->project_type}}</p>
-                            <h4 class="text-white font-bold text-2xl">{{$project->name}}</h4>
+                            <a href="{{route('projects.show', $project)}}">
+                                <p class="text-secondary text-lg mb-2">{{$project->project_type}}</p>
+                                <h4 class="text-white font-bold text-2xl">{{$project->name}}</h4>
+                            </a>
                         </div>
                     </div>
                     <div class="lg:absolute lg:w-[32%] lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-700">
-                        <p class="hidden lg:block text-heading text-primary-500 text-lg mb-2">{{$project->project_type}}</p>
-                        <p class="text-white lg:text-gray-body">{{$project->home_page_description}}</p>
+                        <a href="{{route('projects.show', $project)}}">
+                            <p class="hidden lg:block text-heading text-primary-500 text-lg mb-2">{{$project->project_type}}</p>
+                            <p class="text-white lg:text-gray-body">{{$project->home_page_description}}</p>
+                        </a>
                     </div>
 
                     <div class="hidden lg:block relative w-full">

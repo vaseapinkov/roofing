@@ -6,6 +6,7 @@ use App\Filament\Resources\Sections\SectionGeneral;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\Toggle;
@@ -47,9 +48,12 @@ class CardListSectionBlock
                             ->maxItems(3)
                             ->schema([
                                 TextInput::make('title')
+                                    ->columnSpan(2)
                                     ->label('Title')
                                     ->required(),
-                                TextInput::make('description')
+                                Textarea::make('description')
+                                    ->hint('Keep it under 200 characters.')
+                                    ->rows(4)
                                     ->label('Description')
                                     ->required(),
                                 FileUpload::make('image')

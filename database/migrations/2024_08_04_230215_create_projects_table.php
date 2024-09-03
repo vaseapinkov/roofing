@@ -12,7 +12,6 @@ return new class extends Migration {
             $table->string('name');
             $table->string('meta_description');
             $table->string('meta_image');
-            $table->string('sub_title');
             $table->text('home_page_description');
             $table->string('home_page_image');
             $table->boolean('show_on_home_page');

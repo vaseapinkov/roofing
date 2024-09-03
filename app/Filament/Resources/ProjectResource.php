@@ -68,25 +68,6 @@ class ProjectResource extends Resource
 
                     ]),
 
-                Section::make('SEO')
-                    ->columns(2)
-                    ->collapsible()
-                    ->collapsed()
-                    ->schema([
-                        Textarea::make('meta_description')
-                            ->hint('Keep it under 160 characters')
-                            ->rows(3)
-                            ->maxLength(255)
-                            ->required(),
-                        FileUpload::make('meta_image')
-                            ->hint('1200x627')
-                            ->label('Meta Image')
-                            ->image()
-                            ->imageEditor()
-                            ->imageCropAspectRatio('1.91:1')
-                            ->required(),
-                    ]),
-
                 Section::make('Home Page')
                     ->collapsible()
                     ->collapsed()
@@ -108,9 +89,25 @@ class ProjectResource extends Resource
                             ->required(),
                     ]),
                 Section::make('Details Page')
+                    ->columns(2)
                     ->collapsible()
                     ->collapsed()
                     ->schema([
+                        Textarea::make('meta_description')
+                            ->hint('Keep it under 160 characters')
+                            ->columnSpan(1)
+                            ->rows(3)
+                            ->maxLength(255)
+                            ->required(),
+                        FileUpload::make('meta_image')
+                            ->hint('1200x627')
+                            ->columnSpan(1)
+                            ->label('Meta Image')
+                            ->image()
+                            ->imageEditor()
+                            ->imageCropAspectRatio('1.91:1')
+                            ->required(),
+
                         RichEditor::make('content')
                             ->columnSpan(2)
                             ->fileAttachmentsDirectory('project-details')

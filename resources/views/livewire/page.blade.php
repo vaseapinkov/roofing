@@ -64,7 +64,9 @@
         @elseif($content['type'] === 'contact-form')
 
             @if($content['data']['layout'] === 'book-appointment')
-                <x-sections.forms.book-appintment
+                <x-sections.forms.book-appointment
+                    :id="$content['data']['custom_id']"
+                    :class="$content['data']['custom_classes']"
                     :heading="$content['data']['heading']"
                     :sub-heading="$content['data']['sub_heading']"
                     :ctaText="$content['data']['cta_text']"

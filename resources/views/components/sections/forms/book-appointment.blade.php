@@ -1,5 +1,5 @@
 @props(['heading', 'subHeading', 'ctaText', 'successMessage'])
-<section>
+<section {{$attributes->merge()}}>
 
     <div class="container py-[90px]">
 

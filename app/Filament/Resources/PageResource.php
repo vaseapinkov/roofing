@@ -72,7 +72,13 @@ class PageResource extends Resource
                     ->schema([
                         TextInput::make('slug')
                             ->required()
-                            ->disabled(fn($record) => in_array($record->slug, ['home', 'privacy-policy', 'terms-and-conditions']))
+                            ->disabled(function (string $operation, $record) {
+                                if ($operation === 'create') {
+                                    return;
+                                }
+
+                                in_array($record->slug, ['home', 'privacy-policy', 'terms-and-conditions']);
+                            })
                             ->unique(Page::class, 'slug', fn($record) => $record),
 
                         Select::make('navigation_type')

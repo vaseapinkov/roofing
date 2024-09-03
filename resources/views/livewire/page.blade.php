@@ -64,6 +64,8 @@
             <x-sections.services-section
                 :id="$content['data']['custom_id']"
                 :class="$content['data']['custom_classes']"
+                :heading="$content['data']['heading']"
+                :sub-heading="$content['data']['sub_heading']"
                 :ctaText="$content['data']['cta_text']"
                 :ctaLink="$content['data']['cta_link']"
             />

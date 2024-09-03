@@ -16,7 +16,7 @@
 @endphp
 
 
-<section id="{{$id}}" class="{{$class}} bg-gray-light">
+<section id="{{$id}}" class="{{$class}}">
     <div class="container pt-[120px] pb-[90px] ">
 
         <x-section-title :title="$heading" :sub-title="$subHeading"/>

@@ -12,7 +12,7 @@
     <div class="flex flex-col lg:flex-row gap-10 justify-around w-full">
 
         @foreach(\App\Models\Partners::all() as $partner)
-            <a href="{{$partner['link']}}" class="py-8 px-12 bg-white shadow-card rounded-10">
+            <a href="{{$partner['url']}}" class="py-8 px-12 bg-white shadow-card rounded-10">
                 <img class="mx-auto h-20 w-auto" src="{{asset('storage/' . $partner['image'])}}" alt="{{$partner['name']}}">
             </a>
         @endforeach

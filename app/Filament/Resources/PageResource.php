@@ -15,6 +15,7 @@ use App\Filament\Resources\PageBlocks\TestimonialsSliderBlock;
 use App\Filament\Resources\PageBlocks\TextSectionBlock;
 use App\Filament\Resources\PageResource\Pages;
 use App\Models\Page;
+use Carbon\Carbon;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Section;
@@ -71,6 +72,7 @@ class PageResource extends Resource
                     ->schema([
                         TextInput::make('slug')
                             ->required()
+                            ->disabled(fn($record) => in_array($record->slug, ['home', 'privacy-policy', 'terms-and-conditions']))
                             ->unique(Page::class, 'slug', fn($record) => $record),
 
                         Select::make('navigation_type')
@@ -120,6 +122,14 @@ class PageResource extends Resource
                 //
             ])
             ->actions([
+                Action::make('clone')
+                    ->label('Clone')
+                    ->icon('heroicon-o-document-duplicate')
+                    ->action(function (Page $record, $data) {
+                        $clonedRecord = $record->replicate();
+                        $clonedRecord->slug = $clonedRecord->slug . '-copy-' . Carbon::now()->timestamp;
+                        $clonedRecord->save();
+                    }),
                 EditAction::make(),
                 DeleteAction::make()->requiresConfirmation(),
             ])

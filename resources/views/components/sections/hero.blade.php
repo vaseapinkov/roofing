@@ -6,9 +6,20 @@
     'ctaText',
     'ctaText',
     'backgroundFilter',
+    'backgroundImage',
+    'backgroundImageMobile',
 ])
+<style>
+    .background-image{
+        background-image: url({{asset('storage/' . $backgroundImageMobile)}});
 
-<section  id="{{$id}}" class="{{$class}} relative bg-cover bg-center min-h-[948px] flex items-center justify-center" style="background-image: url({{Vite::asset('resources/images/hero.jpg')}})">
+        @media (min-width: 760px) {
+            background-image: url({{asset('storage/' . $backgroundImage)}});
+        }
+    }
+</style>
+
+<section id="{{$id}}" class="{{$class}} background-image relative bg-cover bg-center min-h-[948px] flex items-center justify-center">
     @if($backgroundFilter)
         <div class="absolute top-0 left-0 right-0 bg-hero-gradient h-full w-full"></div>
     @endif

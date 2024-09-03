@@ -9,6 +9,8 @@
                 :cta-link="$content['data']['cta_link']"
                 :cta-text="$content['data']['cta_text']"
                 :background-filter="$content['data']['background_filter']"
+                :background-image="$content['data']['background_image']"
+                :background-image-mobile="$content['data']['background_image_mobile']"
             />
         @elseif($content['type'] === 'card-list-section')
 

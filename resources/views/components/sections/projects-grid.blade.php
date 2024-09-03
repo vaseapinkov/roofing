@@ -1,3 +1,8 @@
+@props([
+    'id' => '',
+    'class' => '',
+])
+
 <section id="{{$id}}" class="{{$class}} py-[90px] container">
     <x-section-title title="Explore Our Latest Projects" sub-title="Latest Projects"/>
 

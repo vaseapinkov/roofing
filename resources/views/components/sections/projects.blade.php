@@ -1,10 +1,16 @@
-@props(['id', 'class', 'projects'])
+@props([
+    'id' => '',
+    'class' => '',
+    'heading' => '',
+    'subHeading' => '',
+    'projects'
+])
 
 <section id="{{$id}}" class="{{$class}} pt-[120px] pb-[90px] bg-no-repeat overflow-hidden bg-cover" style="background-image:url({{Vite::asset('resources/images/project_bg.jpg')}});">
     <div class="container">
 
         <div class="flex flex-col lg:flex-row gap-10 lg:gap-0 justify-between lg:items-end mb-[50px] text-center lg:text-start">
-            <x-section-title class="!mb-0" :alt-colors="true" :centred="false" title="Explore Our Latest Projects" sub-title="Latest Projects"/>
+            <x-section-title class="!mb-0" :alt-colors="true" :centred="false" :title="$heading" :sub-title="$subHeading"/>
             <x-button href="{{route('projects.index')}}" class="w-fit h-fit mx-auto lg:mx-0" icon="arrow-right">View all projects</x-button>
         </div>
 

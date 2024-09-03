@@ -1,11 +1,18 @@
-@props(['id', 'class', 'items', 'overlap', 'hasBackgroundImage', 'backgroundImage'])
+@props([
+    'id' => '',
+    'class' => '',
+    'items',
+    'overlap',
+    'hasBackgroundImage',
+    'backgroundImage',
+])
 
 @php
-$classes = $overlap ? 'pb-[90px]' : 'py-[90px]';
+    $classes = $overlap ? 'pb-[90px]' : 'py-[90px]';
 
-if ($hasBackgroundImage){
-    $classes .= ' bg-center bg-no-repeat bg-cover';
-}
+    if ($hasBackgroundImage){
+        $classes .= ' bg-center bg-no-repeat bg-cover';
+    }
 
 @endphp
 

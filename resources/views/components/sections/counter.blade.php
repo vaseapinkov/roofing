@@ -1,3 +1,8 @@
+@props([
+    'id' => '',
+    'class' => '',
+    'items'
+])
 <section id="{{$id}}" class="{{$class}} pt-[120px] pb-[90px] bg-primary-500">
 
     <div class="container ">

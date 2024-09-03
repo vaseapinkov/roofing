@@ -1,3 +1,14 @@
+@props([
+    'id' => '',
+    'class' => '',
+    'heading' => '',
+    'subHeading' => '',
+    'image',
+    'ctaText',
+    'ctaLink',
+    'content',
+    'features'
+])
 <section id="{{$id}}" class="{{$class}} container mx-auto py-[45px] lg:py-[90px]">
 
     <div class="flex flex-col lg:flex-row">

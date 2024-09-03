@@ -1,4 +1,11 @@
-@props(['id', 'class', 'heading', 'subHeading', 'ctaText', 'successMessage'])
+@props([
+    'id' => '',
+    'class' => '',
+    'heading' => '',
+    'subHeading' => '',
+    'ctaText',
+    'successMessage'
+])
 
 <section id="{{$id}}" class="{{$class}}">
     <div class="" style="background-image:url({{Vite::asset('resources/images/newsletter_bg.jpg')}});">

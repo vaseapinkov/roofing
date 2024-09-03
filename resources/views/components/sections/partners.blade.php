@@ -1,9 +1,9 @@
 @props([
-    'items',
+    'id' => '',
+    'class' => '',
     'heading' => '',
     'subHeading' => '',
-    'id',
-    'class',
+    'items',
 ])
 
 <div id="{{$id}}" class="{{$class}} pb-[90px] container">

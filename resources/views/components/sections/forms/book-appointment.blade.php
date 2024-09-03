@@ -1,4 +1,11 @@
-@props(['id', 'class', 'heading', 'subHeading', 'ctaText', 'successMessage'])
+@props([
+    'id' => '',
+    'class' => '',
+    'heading' => '',
+    'subHeading' => '',
+    'ctaText',
+    'successMessage'
+])
 <section id="{{$id}}" class="{{$class}}">
 
     <div class="container py-[90px]">

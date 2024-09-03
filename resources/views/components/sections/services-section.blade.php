@@ -1,4 +1,12 @@
-@props(['id', 'class', 'ctaLink', 'ctaText'])
+@props([
+    'id' => '',
+    'class' => '',
+    'heading' => '',
+    'subHeading' => '',
+    'ctaLink',
+    'ctaText',
+])
+
 @php
     if (Route::current()->uri === '/') {
         $services = \App\Models\Service::where('show_on_home_page', true)->get();
@@ -11,7 +19,7 @@
 <section id="{{$id}}" class="{{$class}} bg-gray-light">
     <div class="container pt-[120px] pb-[90px] ">
 
-        <x-section-title title="Our Services Are" sub-title="What We Do"/>
+        <x-section-title :title="$heading" :sub-title="$subHeading"/>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-3 justify-items-stretch">
             @foreach($services as $service)

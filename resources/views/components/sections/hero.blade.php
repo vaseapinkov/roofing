@@ -1,3 +1,13 @@
+@props([
+    'id' => '',
+    'class' => '',
+    'heading' => '',
+    'subHeading' => '',
+    'ctaText',
+    'ctaText',
+    'backgroundFilter',
+])
+
 <section  id="{{$id}}" class="{{$class}} relative bg-cover bg-center min-h-[948px] flex items-center justify-center" style="background-image: url({{Vite::asset('resources/images/hero.jpg')}})">
     @if($backgroundFilter)
         <div class="absolute top-0 left-0 right-0 bg-hero-gradient h-full w-full"></div>

@@ -53,7 +53,7 @@ class FeatureSectionBlock
                             ->label('Features')
                             ->columnSpan(2)
                             ->columns(2)
-                            ->maxItems(4)
+                            ->maxItems(2)
                             ->schema([
                                 TextInput::make('name')
                                     ->label('Title')

@@ -16,7 +16,7 @@ class PartnersSectionBlock
     {
         return Builder\Block::make('partners-section')
             ->schema([
-                SectionGeneral::section(),
+                SectionGeneral::section(hidden: ['heading', 'subheading']),
             ]);
     }
 }

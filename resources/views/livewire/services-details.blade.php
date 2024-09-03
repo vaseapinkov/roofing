@@ -8,7 +8,7 @@
             </div>
         </div>
 
-        <div class="col-span-12 xl:col-span-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-1 gap-12">
+        <div class="col-span-12 xl:col-span-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-1 gap-12 h-fit">
 
             <div>
                 <div class="bg-white shadow-card rounded-10 py-8 px-8">

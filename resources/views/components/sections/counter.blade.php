@@ -1,13 +1,4 @@
-<?php
-$counterData = [
-    ['name' => 'Projects completed', 'number' => '5739', 'icon' => 'counter_icon01.svg'],
-    ['name' => 'Satisfied Clients', 'number' => '4312', 'icon' => 'counter_icon02.svg'],
-    ['name' => 'Experienced Staff', 'number' => '78', 'icon' => 'counter_icon03.svg'],
-];
-
-if (!isset($items)) $items = $counterData;
-?>
-<section {{$attributes->merge()}} class="pt-[120px] pb-[90px] bg-primary-500">
+<section id="{{$id}}" class="{{$class}} pt-[120px] pb-[90px] bg-primary-500">
 
     <div class="container ">
         <div class="bg-gray-light rounded-10 py-10 flex flex-col sm:flex-row flex-wrap gap-10 2xl:gap-0 justify-around">

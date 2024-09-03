@@ -1,6 +1,6 @@
-@props(['heading', 'subHeading', 'items'])
+@props(['id', 'class', 'heading', 'subHeading', 'items'])
 
-<section {{$attributes->merge()}} class="container mx-auto pt-[90px] pb-[90px]">
+<section id="{{$id}}" class="{{$class}} container mx-auto pt-[90px] pb-[90px]">
 
     <x-section-title :centred="true" :title="$heading" :sub-title="$subHeading"/>
 

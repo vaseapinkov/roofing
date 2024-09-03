@@ -1,4 +1,4 @@
-<section class="py-[90px] container">
+<section id="{{$id}}" class="{{$class}} py-[90px] container">
     <x-section-title title="Explore Our Latest Projects" sub-title="Latest Projects"/>
 
     <div class="flex flex-row flex-wrap gap-5 justify-center">

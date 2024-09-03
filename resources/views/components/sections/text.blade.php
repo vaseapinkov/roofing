@@ -1,4 +1,4 @@
-@props(['content'])
+@props(['id', 'class', 'content'])
 
 {{-- A random string is appednd to the class name to fake componet scoped styles --}}
 @php($hash = Str::random(5))
@@ -16,6 +16,6 @@
     </style>
 @endif
 
-<div class="container mx-auto py-[90px] content hash-{{$hash}}">
+<div id="{{$id}}" class="{{$class}} container mx-auto py-[90px] content hash-{{$hash}}">
     {!! $content !!}
 </div>

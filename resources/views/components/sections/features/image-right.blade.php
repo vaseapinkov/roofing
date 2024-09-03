@@ -1,4 +1,4 @@
-<section {{$attributes->merge()}} class="container mx-auto py-[45px] lg:py-[90px]">
+<section id="{{$id}}" class="{{$class}} container mx-auto py-[45px] lg:py-[90px]">
 
     <div class="flex flex-col-reverse lg:flex-row">
         <div class="w-full xl:w-[40%]">

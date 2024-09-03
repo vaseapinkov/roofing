@@ -1,4 +1,4 @@
-@props(['ctaLink', 'ctaText'])
+@props(['id', 'class', 'ctaLink', 'ctaText'])
 @php
     if (Route::current()->uri === '/') {
         $services = \App\Models\Service::where('show_on_home_page', true)->get();
@@ -8,7 +8,7 @@
 @endphp
 
 
-<section {{$attributes->merge()}} class="bg-gray-light" id="services">
+<section id="{{$id}}" class="{{$class}} bg-gray-light">
     <div class="container pt-[120px] pb-[90px] ">
 
         <x-section-title title="Our Services Are" sub-title="What We Do"/>

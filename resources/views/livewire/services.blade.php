@@ -3,7 +3,7 @@
 
     <x-sections.services-section/>
 
-    <x-sections.forms.book-appintment
+    <x-sections.forms.book-appointment
         heading="Book Your Appointment"
         sub-heading="Your roof require professional attention"
         cta-text="Book Now"

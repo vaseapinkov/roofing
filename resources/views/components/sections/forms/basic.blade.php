@@ -1,6 +1,6 @@
 @props(['heading', 'subHeading', 'ctaText', 'successMessage'])
 
-<section>
+<section {{$attributes->merge()}}>
     <div class="" style="background-image:url({{Vite::asset('resources/images/newsletter_bg.jpg')}});">
         <div class="bg-primary-500/80 h-full w-full py-[90px]">
 

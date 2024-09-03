@@ -2,7 +2,7 @@
 
 @php($testimonials = \App\Models\Testimonial::where('show_on_home_page', true)->get())
 
-<section class="bg-gray-light pt-[120px] pb-[90px]">
+<section {{$attributes->merge()}} class="bg-gray-light pt-[120px] pb-[90px]">
     <div class="container">
 
         <x-section-title :centred="false" :title="$heading" :sub-title="$subHeading"/>

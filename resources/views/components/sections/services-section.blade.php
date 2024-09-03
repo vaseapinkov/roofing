@@ -8,7 +8,7 @@
 @endphp
 
 
-<section class="bg-gray-light" id="services">
+<section {{$attributes->merge()}} class="bg-gray-light" id="services">
     <div class="container pt-[120px] pb-[90px] ">
 
         <x-section-title title="Our Services Are" sub-title="What We Do"/>

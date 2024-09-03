@@ -1,6 +1,6 @@
 @props(['items', 'overlap', 'hasBackgroundImage', 'backgroundImage'])
 
-<section @class(['pb-[90px]' => $overlap, 'py-[90px]' => !$overlap, 'bg-center bg-no-repeat bg-cover' => 'hasBackgroundImage']) @if($hasBackgroundImage) style="background-image: url('{{asset('storage/' . $backgroundImage)}}')" @endif>
+<section {{$attributes->merge(['class' => ['pb-[90px]' => $overlap, 'py-[90px]' => !$overlap, 'bg-center bg-no-repeat bg-cover' => 'hasBackgroundImage']])}} @if($hasBackgroundImage) style="background-image: url('{{asset('storage/' . $backgroundImage)}}')" @endif>
     <div class="container">
         <div @class(['-mt-36' => $overlap, 'relative flex flex-col lg:flex-row flex-wrap justify-around z-10 gap-y-8'])>
             @foreach($items as $item)

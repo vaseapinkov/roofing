@@ -1,6 +1,6 @@
 @props(['projects'])
 
-<section class="pt-[120px] pb-[90px] bg-no-repeat overflow-hidden bg-cover" style="background-image:url({{Vite::asset('resources/images/project_bg.jpg')}});">
+<section {{$attributes->merge()}} class="pt-[120px] pb-[90px] bg-no-repeat overflow-hidden bg-cover" style="background-image:url({{Vite::asset('resources/images/project_bg.jpg')}});">
     <div class="container">
 
         <div class="flex flex-col lg:flex-row gap-10 lg:gap-0 justify-between lg:items-end mb-[50px] text-center lg:text-start">

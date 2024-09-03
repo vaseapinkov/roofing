@@ -7,7 +7,7 @@ $counterData = [
 
 if (!isset($items)) $items = $counterData;
 ?>
-<section class="pt-[120px] pb-[90px] bg-primary-500">
+<section {{$attributes->merge()}} class="pt-[120px] pb-[90px] bg-primary-500">
 
     <div class="container ">
         <div class="bg-gray-light rounded-10 py-10 flex flex-col sm:flex-row flex-wrap gap-10 2xl:gap-0 justify-around">

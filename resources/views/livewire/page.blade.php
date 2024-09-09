@@ -132,8 +132,14 @@
                 :sub-heading="$content['data']['sub_heading']"
             />
 
+        @elseif($content['type'] === 'script-section')
+
+            {!! $content['data']['embedded_scripts'] !!}
+
         @endif
 
     @endforeach
 
 </div>
+
+

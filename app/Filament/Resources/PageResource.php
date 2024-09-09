@@ -8,6 +8,7 @@ use App\Filament\Resources\PageBlocks\FeatureSectionBlock;
 use App\Filament\Resources\PageBlocks\HeroSectionBlock;
 use App\Filament\Resources\PageBlocks\PartnersSectionBlock;
 use App\Filament\Resources\PageBlocks\ProjectsSectionBlock;
+use App\Filament\Resources\PageBlocks\ScriptSectionBlock;
 use App\Filament\Resources\PageBlocks\ServicesSectionBlock;
 use App\Filament\Resources\PageBlocks\CardListSectionBlock;
 use App\Filament\Resources\PageBlocks\StepsSectionBlock;
@@ -108,6 +109,7 @@ class PageResource extends Resource
                         StepsSectionBlock::block(),
                         PartnersSectionBlock::block(),
                         ProjectsSectionBlock::block(),
+                        ScriptSectionBlock::block(),
                     ]),
             ]);
     }

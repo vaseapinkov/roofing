@@ -27,4 +27,9 @@ class Page extends Model
     {
         return 'slug';
     }
+
+    public static function getHomePage(): self
+    {
+        return self::where('slug', 'home')->first();
+    }
 }

@@ -25,6 +25,8 @@ class Page extends Component
                 'title' => $this->page->meta_title,
                 'settings' => Settings::first(),
                 'navigationType' => $this->page->navigation_type,
+                'metaDescription' => $this->page->meta_description,
+                'metaImage' => $this->page->meta_image,
             ]);
     }
 

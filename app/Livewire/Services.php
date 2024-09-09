@@ -13,11 +13,14 @@ class Services extends Component
 
     public function render(): View
     {
+        $homePage = \App\Models\Page::getHomePage();
 
         return view('livewire.services')->layoutData([
             'title' => 'Services',
             'settings' => Settings::first(),
             'navigationType' => 'default',
+            'metaDescription' => $homePage->meta_description,
+            'metaImage' => $homePage->meta_image,
         ]);
     }
 

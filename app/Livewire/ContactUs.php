@@ -24,11 +24,15 @@ class ContactUs extends Component
 
     public function render(): View
     {
+        $homePage = \App\Models\Page::getHomePage();
+
         return view('livewire.contact-us')
             ->layoutData([
                 'title' => "Contact Us",
                 'settings' => $this->settings,
                 'navigationType' => "default",
+                'metaImage' => $homePage->meta_image,
+                'metaDescription' => $homePage->meta_description,
             ]);
     }
 

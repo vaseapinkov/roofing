@@ -11,4 +11,4 @@ Route::get('/projects', App\Livewire\Projects::class)->name('projects.index');
 Route::get('/projects/{project}', App\Livewire\ProjectsDetails::class)->name('projects.show');
 
 Route::get('/', App\Livewire\Page::class)->name('home');
-Route::get('{page}', App\Livewire\Page::class)->name('page');
+Route::get('/{page}', App\Livewire\Page::class)->name('page');

@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class ServicesDetails extends Component
 {
-    public $service;
+    public Service $service;
     public $services;
 
     public function mount(Service $service): void
@@ -24,7 +24,9 @@ class ServicesDetails extends Component
             ->layoutData([
                 'title' => $this->service->name,
                 'settings' => Settings::first(),
-                'navigationType' => 'default'
+                'navigationType' => 'default',
+                'metaImage' => $this->service->meta_image,
+                'metaDescription' => $this->service->meta_description,
             ]);
     }
 }

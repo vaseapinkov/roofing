@@ -17,6 +17,18 @@
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
 
+    @isset($metaDescription)
+        <meta name="description" content="{{$metaDescription}}">
+        <meta name="og:description" content="{{$metaDescription}}">
+        <meta name="twitter:description" content="{{$metaDescription}}">
+    @endisset
+
+    @isset($metaImage)
+        <meta name="image" content="{{url('storage/' . $metaImage)}}">
+        <meta name="og:image" content="{{url('storage/' . $metaImage)}}">
+        <meta name="twitter:image" content="{{url('storage/' . $metaImage)}}">
+    @endisset
+
     {!! $settings->scripts_head !!}
 
     {!! $settings->css_head !!}

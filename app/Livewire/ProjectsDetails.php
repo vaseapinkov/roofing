@@ -23,9 +23,11 @@ class ProjectsDetails extends Component
             'project' => $this->project,
             'services' => Service::all(),
         ])->layoutData([
-            'title' => $this->project->name,
             'settings' => Settings::first(),
-            'navigationType' => 'default'
+            'title' => $this->project->name,
+            'metaImage' => $this->project->meta_image,
+            'metaDescription' => $this->project->meta_description,
+            'navigationType' => 'default',
         ]);
     }
 }

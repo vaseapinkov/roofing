@@ -27,7 +27,6 @@ class CounterSectionBlock
                                 ->label('Title')
                                 ->required(),
                             TextInput::make('number')
-                                ->type('number')
                                 ->label('Number')
                                 ->required(),
                             FileUpload::make('icon')

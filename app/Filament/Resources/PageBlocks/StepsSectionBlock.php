@@ -22,7 +22,12 @@ class StepsSectionBlock
                         ->columns(3)
                         ->label('Items')
                         ->minItems(3)
-                        ->maxItems(4)
+                        ->maxItems(8)
+                        ->collapsible()
+                        ->collapsed()
+                        ->cloneable()
+                        ->reorderableWithDragAndDrop()
+                        ->itemLabel(fn(array $state): ?string => $state['title'] ?? null)
                         ->schema([
                             TextInput::make('title')
                                 ->label('Title')

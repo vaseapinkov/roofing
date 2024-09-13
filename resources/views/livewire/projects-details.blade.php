@@ -40,7 +40,7 @@
 
                 <nav class="space-y-4 mt-8">
                     @foreach($services as $item)
-                        <x-button class="w-full justify-between" type="alt" size="sm" icon="arrow-right">{{$item->name}}</x-button>
+                        <x-button wire:navigate :href="route('services.show', $item)" class="w-full justify-between" type="alt" size="sm" icon="arrow-right">{{$item->name}}</x-button>
                     @endforeach
                 </nav>
             </div>
